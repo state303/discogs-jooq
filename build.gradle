@@ -6,7 +6,6 @@ plugins {
 }
 
 def gid = 'io.dsub.discogs',
-    aid = 'common',
     ver = '0.1',
     name = 'state303',
     repo = 'discogs-common'
@@ -53,9 +52,6 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/" + name + "/" + repo)
-
-            // getenv will take the variables from actual parts
-            // that will be injected from git action.
             credentials {
                 username = System.getenv('USERNAME')
                 password = System.getenv('PKG_TOKEN')
@@ -65,7 +61,7 @@ publishing {
     publications {
         gpr(MavenPublication) {
             groupId = gid
-            artifactId = aid
+            artifactId = repo
             version = ver
             from(components.java)
         }
