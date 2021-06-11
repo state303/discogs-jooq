@@ -44,7 +44,7 @@ publishing {
         gpr(MavenPublication) {
             groupId = "io.dsub.discogs"
             artifactId = "discogs-common"
-            version = "0.1-alpha"
+            version = "0.1.1-alpha"
             from(components.java)
         }
     }
