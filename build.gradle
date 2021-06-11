@@ -9,7 +9,7 @@ bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.1'
+version '0.0.1'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
@@ -29,29 +29,34 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 }
 
+def props = new Properties()
+if (file(".env").exists()) {
+    file(".env").withInputStream { props.load(it) }
+}
+
 publishing {
     repositories {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/state303/discogs-common")
             credentials {
-                username = System.getenv('USERNAME')
-                password = System.getenv('PKG_TOKEN')
+                username = props.getProperty("USERNAME") ?: System.getenv("USERNAME")
+                password = props.getProperty("PKG_TOKEN") ?: System.getenv("PKG_TOKEN")
             }
         }
     }
     publications {
         gpr(MavenPublication) {
-            groupId = "io.dsub.discogs"
-            artifactId = "discogs-common"
-            version = "0.1"
-            from(components.java)
+            artifactId = 'discogs-common'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
         }
-    }
-}
-
-configurations.each {
-    it.resolutionStrategy.each {
-        it.cacheChangingModulesFor 0, 'seconds'
     }
 }
