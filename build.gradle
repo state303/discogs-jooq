@@ -9,7 +9,7 @@ bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.1.1-alpha'
+version '0.1.1.alpha'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
