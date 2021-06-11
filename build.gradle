@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.springframework.boot' version '2.5.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+def gid = 'io.dsub.discogs',
+    aid = 'common',
+    ver = '0.1',
+    name = 'state303',
+    repo = 'discogs-common'
+
+group gid
+version ver
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+dependencies {
+    implementation (
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-aop',
+            'org.projectlombok:lombok',
+            'org.apache.commons:commons-lang3',
+            'net.ttddyy:datasource-proxy:1.7'
+    )
+    testImplementation (
+            'org.springframework.boot:spring-boot-starter-test',
+            'org.junit.jupiter:junit-jupiter-api:5.7.0',
+            'org.projectlombok:lombok'
+    )
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+bootJar.enabled(false)
+jar.enabled(true)
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/" + name + "/" + repo)
+
+            // getenv will take the variables from actual parts
+            // that will be injected from git action.
+            credentials {
+                username = System.getenv('USERNAME')
+                password = System.getenv('PKG_TOKEN')
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            groupId = gid
+            artifactId = aid
+            version = ver
+            from(components.java)
+        }
+    }
+}
+
+configurations.each {
+    it.resolutionStrategy.each {
+        it.cacheChangingModulesFor 0, 'seconds'
+    }
+}
