@@ -5,13 +5,11 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-def gid = 'io.dsub.discogs',
-    ver = '0.1',
-    ghUser = 'state303',
-    repoName = 'discogs-common'
+bootJar.enabled(false)
+jar.enabled(true)
 
-group gid
-version ver
+group 'io.dsub.discogs'
+version 0.1
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
@@ -44,14 +42,11 @@ test {
     useJUnitPlatform()
 }
 
-bootJar.enabled(false)
-jar.enabled(true)
-
 publishing {
     repositories {
         maven {
-            ghUser = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/" + ghUser + "/" + repoName)
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/state303/discogs-common")
             credentials {
                 username = System.getenv('USERNAME')
                 password = System.getenv('PKG_TOKEN')
@@ -60,9 +55,9 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            groupId = gid
-            artifactId = repoName
-            version = ver
+            groupId = "io.dsub.discogs"
+            artifactId = "common"
+            version = "0.1"
             from(components.java)
         }
     }
