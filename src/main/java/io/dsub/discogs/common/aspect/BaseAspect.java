@@ -3,9 +3,7 @@ package io.dsub.discogs.common.aspect;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
-/**
- * Base aspect class to be used as a source of pointcuts.
- */
+/** Base aspect class to be used as a source of pointcuts. */
 @Aspect
 public abstract class BaseAspect {
 
