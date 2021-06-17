@@ -39,11 +39,11 @@ public class ReleaseItemCreditedArtist extends BaseTimeEntity {
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
-  @JoinColumn(name = "release_item_id", referencedColumnName = "id")
+  @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
   @ManyToOne
   private ReleaseItem releaseItem;
 
-  @JoinColumn(name = "artist_id", referencedColumnName = "id")
+  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
   @ManyToOne
   private Artist artist;
 

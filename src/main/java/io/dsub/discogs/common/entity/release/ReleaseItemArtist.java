@@ -39,10 +39,10 @@ public class ReleaseItemArtist extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "release_item_id", referencedColumnName = "id")
+  @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
   private ReleaseItem releaseItem;
 
   @ManyToOne
-  @JoinColumn(name = "artist_id", referencedColumnName = "id")
+  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
   private Artist artist;
 }

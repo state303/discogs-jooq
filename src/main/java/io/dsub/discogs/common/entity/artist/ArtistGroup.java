@@ -38,10 +38,10 @@ public class ArtistGroup extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "artist_id", referencedColumnName = "id")
+  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
   private Artist artist;
 
   @ManyToOne
-  @JoinColumn(name = "group_id", referencedColumnName = "id")
+  @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false)
   private Artist group;
 }

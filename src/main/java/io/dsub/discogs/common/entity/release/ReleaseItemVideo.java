@@ -47,6 +47,6 @@ public class ReleaseItemVideo extends BaseTimeEntity {
   private String url;
 
   @ManyToOne
-  @JoinColumn(name = "release_item_id", referencedColumnName = "id")
+  @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
   private ReleaseItem releaseItem;
 }

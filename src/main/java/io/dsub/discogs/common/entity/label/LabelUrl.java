@@ -38,7 +38,7 @@ public class LabelUrl extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne(optional = false)
-  @JoinColumn(name = "label_id", referencedColumnName = "id")
+  @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false)
   private Label label;
 
   @Column(length = 5000, name = "url")
