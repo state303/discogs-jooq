@@ -38,7 +38,7 @@ public class ArtistNameVariation extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne(optional = false)
-  @JoinColumn(name = "artist_id", referencedColumnName = "id")
+  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
   private Artist artist;
 
   @Column(length = 2000, name = "name_variation")

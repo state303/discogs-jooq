@@ -40,11 +40,11 @@ public class ReleaseItemWork extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "release_item_id", referencedColumnName = "id")
+  @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
   private ReleaseItem releaseItem;
 
   @ManyToOne
-  @JoinColumn(name = "label_id", referencedColumnName = "id")
+  @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false)
   private Label label;
 
   @Column(name = "work", length = 5000)

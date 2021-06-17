@@ -47,6 +47,6 @@ public class MasterVideo extends BaseTimeEntity {
   private String url;
 
   @ManyToOne
-  @JoinColumn(name = "master_id", referencedColumnName = "id")
+  @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
   private Master master;
 }

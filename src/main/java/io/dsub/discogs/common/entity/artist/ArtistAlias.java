@@ -38,10 +38,10 @@ public class ArtistAlias extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "artist_id", referencedColumnName = "id")
+  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
   private Artist artist;
 
   @ManyToOne
-  @JoinColumn(name = "alias_id", referencedColumnName = "id")
+  @JoinColumn(name = "alias_id", referencedColumnName = "id", nullable = false)
   private Artist alias;
 }

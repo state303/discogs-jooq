@@ -53,6 +53,6 @@ public class ReleaseItemFormat extends BaseTimeEntity {
   private String text;
 
   @ManyToOne
-  @JoinColumn(name = "release_item_id", referencedColumnName = "id")
+  @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
   private ReleaseItem releaseItem;
 }

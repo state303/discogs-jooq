@@ -39,7 +39,7 @@ public class MasterStyle extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "master_id", referencedColumnName = "id")
+  @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
   private Master master;
 
   @ManyToOne
