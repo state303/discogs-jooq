@@ -43,7 +43,7 @@ public class LabelRelease extends BaseTimeEntity {
   private ReleaseItem releaseItem;
 
   @ManyToOne
-  @JoinColumn(name = "label_id", referencedColumnName = "id")
+  @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false)
   private Label label;
 
   @Column(name = "category_notation")
