@@ -42,7 +42,7 @@ public class MasterGenre extends BaseTimeEntity {
   @ManyToOne
   private Master master;
 
-  @JoinColumn(name = "genre", referencedColumnName = "name")
+  @JoinColumn(name = "genre", referencedColumnName = "name", nullable = false)
   @ManyToOne
   private Genre genre;
 }
