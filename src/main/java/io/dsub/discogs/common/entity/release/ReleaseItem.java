@@ -46,10 +46,6 @@ public class ReleaseItem extends BaseTimeEntity {
   @Column(name = "data_quality")
   private String dataQuality;
 
-  @ManyToOne
-  @JoinColumn(name = "master_id", referencedColumnName = "id")
-  private Master master;
-
   @Column(name = "has_valid_month")
   private boolean hasValidMonth;
 
@@ -64,12 +60,4 @@ public class ReleaseItem extends BaseTimeEntity {
 
   @Column(name = "release_date")
   private LocalDate releaseDate;
-
-  public boolean getIsMaster() {
-    return this.isMaster;
-  }
-
-  public Long getMasterId() {
-    return master == null ? null : master.getId();
-  }
 }
