@@ -41,6 +41,6 @@ public class ReleaseItemMaster extends BaseTimeEntity {
   private ReleaseItem releaseItem;
 
   @ManyToOne
-  @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+  @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
   private Master master;
 }
