@@ -1,5 +1,6 @@
 package io.dsub.discogs.common.entity.release;
 
+import io.dsub.discogs.common.entity.base.BaseTimeEntity;
 import io.dsub.discogs.common.entity.master.Master;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ import lombok.NoArgsConstructor;
             name = "uq_release_item_master_release_item_id_master_id",
             columnNames = {"type", "description", "value", "release_item_id"})
     })
-public class ReleaseItemMaster {
+public class ReleaseItemMaster extends BaseTimeEntity {
   @Id
   @Column(name = "id", columnDefinition = "serial")
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
