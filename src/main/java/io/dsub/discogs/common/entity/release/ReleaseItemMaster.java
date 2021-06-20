@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
     uniqueConstraints = {
         @UniqueConstraint(
             name = "uq_release_item_master_release_item_id_master_id",
-            columnNames = {"type", "description", "value", "release_item_id"})
+            columnNames = {"release_item_id", "master_id"})
     })
 public class ReleaseItemMaster extends BaseTimeEntity {
   @Id
