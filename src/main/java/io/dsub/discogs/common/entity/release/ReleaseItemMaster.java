@@ -31,6 +31,7 @@ import lombok.NoArgsConstructor;
             columnNames = {"release_item_id", "master_id"})
     })
 public class ReleaseItemMaster extends BaseTimeEntity {
+
   @Id
   @Column(name = "id", columnDefinition = "serial")
   @GeneratedValue(strategy = GenerationType.SEQUENCE)

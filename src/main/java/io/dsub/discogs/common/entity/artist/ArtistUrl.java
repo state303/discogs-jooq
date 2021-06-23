@@ -25,9 +25,9 @@ import lombok.With;
 @Table(
     name = "artist_url",
     uniqueConstraints =
-        @UniqueConstraint(
-            name = "uq_artist_url_artist_id_url",
-            columnNames = {"artist_id", "url"}))
+    @UniqueConstraint(
+        name = "uq_artist_url_artist_id_url",
+        columnNames = {"artist_id", "url"}))
 public class ArtistUrl extends BaseTimeEntity {
 
   private static final Long SerialVersionUID = 1L;

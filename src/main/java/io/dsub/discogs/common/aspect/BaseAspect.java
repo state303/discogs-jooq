@@ -3,40 +3,53 @@ package io.dsub.discogs.common.aspect;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
-/** Base aspect class to be used as a source of pointcuts. */
+/**
+ * Base aspect class to be used as a source of pointcuts.
+ */
 @Aspect
 public abstract class BaseAspect {
 
   @Pointcut("execution(io.dsub.discogs..*.new(..))")
-  public void constructor() {}
+  public void constructor() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..*Test(..))")
-  public void testMethod() {}
+  public void testMethod() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..*(..)) && !constructor()")
-  public void anyMethod() {}
+  public void anyMethod() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..*(.., java.lang.Class, ..)) && !constructor()")
-  public void methodsTakeOneOrMoreClass() {}
+  public void methodsTakeOneOrMoreClass() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..set*(..))")
-  public void setter() {}
+  public void setter() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..get*(..))")
-  public void getter() {}
+  public void getter() {
+  }
 
   @Pointcut("execution(* io.dsub.discogs..with*(..))")
-  public void wither() {}
+  public void wither() {
+  }
 
   @Pointcut("@within(org.springframework.stereotype.Service)")
-  public void service() {}
+  public void service() {
+  }
 
   @Pointcut("@within(javax.persistence.Entity)")
-  public void entity() {}
+  public void entity() {
+  }
 
   @Pointcut("@within(org.springframework.stereotype.Repository)")
-  public void repository() {}
+  public void repository() {
+  }
 
   @Pointcut("@within(org.springframework.stereotype.Controller)")
-  public void controller() {}
+  public void controller() {
+  }
 }

@@ -25,12 +25,12 @@ import lombok.NoArgsConstructor;
 @Table(
     name = "release_item_format",
     uniqueConstraints =
-        @UniqueConstraint(
-            name = "uq_release_item_format_name_quantity_text_release_item_id",
-            columnNames = {
-              "name", "quantity",
-              "text", "release_item_id"
-            }))
+    @UniqueConstraint(
+        name = "uq_release_item_format_name_quantity_text_release_item_id",
+        columnNames = {
+            "name", "quantity",
+            "text", "release_item_id"
+        }))
 public class ReleaseItemFormat extends BaseTimeEntity {
 
   private static final Long SerialVersionUID = 1L;

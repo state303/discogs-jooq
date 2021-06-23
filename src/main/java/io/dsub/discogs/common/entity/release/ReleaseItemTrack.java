@@ -25,9 +25,9 @@ import lombok.NoArgsConstructor;
 @Table(
     name = "release_item_track",
     uniqueConstraints = {
-      @UniqueConstraint(
-          name = "uq_release_item_track_position_title_duration_release_item_id",
-          columnNames = {"position", "title", "duration", "release_item_id"})
+        @UniqueConstraint(
+            name = "uq_release_item_track_position_title_duration_release_item_id",
+            columnNames = {"position", "title", "duration", "release_item_id"})
     })
 public class ReleaseItemTrack extends BaseTimeEntity {
 
