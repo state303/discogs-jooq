@@ -27,10 +27,10 @@ public class ArtistGroup extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_group_artist_id_artist"))
     private Artist artist;
 
     @ManyToOne
-    @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "group_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_group_group_id_artist"))
     private Artist group;
 }

@@ -28,11 +28,11 @@ public class ReleaseItemCreditedArtist extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_credited_artist_release_item_id_release_item"))
     @ManyToOne
     private ReleaseItem releaseItem;
 
-    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_credited_artist_artist_id_artist"))
     @ManyToOne
     private Artist artist;
 

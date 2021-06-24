@@ -28,10 +28,10 @@ public class MasterStyle extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_style_master_id_master"))
     private Master master;
 
     @ManyToOne
-    @JoinColumn(name = "style", referencedColumnName = "name", nullable = false)
+    @JoinColumn(name = "style", referencedColumnName = "name", nullable = false, foreignKey = @ForeignKey(name = "fk_master_style_style_style"))
     private Style style;
 }

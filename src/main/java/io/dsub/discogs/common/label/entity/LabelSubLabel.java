@@ -30,10 +30,10 @@ public class LabelSubLabel extends BaseTimeEntity {
      * NOTE: mark any FetchType to avoid warning about immutability.
      */
     @ManyToOne
-    @JoinColumn(name = "parent_label_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "parent_label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_sub_label_parent_label_id_label"))
     private Label parent;
 
     @ManyToOne
-    @JoinColumn(name = "sub_label_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "sub_label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_sub_label_sub_label_id_label"))
     private Label subLabel;
 }

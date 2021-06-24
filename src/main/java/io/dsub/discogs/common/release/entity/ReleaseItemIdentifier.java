@@ -37,6 +37,6 @@ public class ReleaseItemIdentifier extends BaseTimeEntity {
     private String value;
 
     @ManyToOne
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_identifier_release_item_id_release_item"))
     private ReleaseItem releaseItem;
 }

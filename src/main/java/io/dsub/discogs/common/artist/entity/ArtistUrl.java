@@ -27,7 +27,7 @@ public class ArtistUrl extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_url_artist_id_artist"))
     private Artist artist;
 
     @Column(length = 5000, name = "url", nullable = false)

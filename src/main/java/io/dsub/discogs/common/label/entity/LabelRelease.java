@@ -28,11 +28,11 @@ public class LabelRelease extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_release_release_item_id_release_item"))
     private ReleaseItem releaseItem;
 
     @ManyToOne
-    @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_release_label_id_label"))
     private Label label;
 
     @Column(name = "category_notation")
