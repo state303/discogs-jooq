@@ -27,11 +27,11 @@ public class ReleaseItemGenre extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_genre_release_item_id_release_item"))
     @ManyToOne
     private ReleaseItem releaseItem;
 
-    @JoinColumn(name = "genre", referencedColumnName = "name", nullable = false)
+    @JoinColumn(name = "genre", referencedColumnName = "name", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_genre_genre_genre"))
     @ManyToOne
     private Genre genre;
 }

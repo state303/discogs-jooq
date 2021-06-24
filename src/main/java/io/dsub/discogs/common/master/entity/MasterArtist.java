@@ -27,11 +27,11 @@ public class MasterArtist extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_artist_master_id_master"))
     @ManyToOne
     private Master master;
 
-    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_artist_artist_id_artist"))
     @ManyToOne
     private Artist artist;
 }

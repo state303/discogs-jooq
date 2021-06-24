@@ -27,10 +27,10 @@ public class ReleaseItemMaster extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_master_release_item_id_release_item"))
     private ReleaseItem releaseItem;
 
     @ManyToOne
-    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_master_master_id_master"))
     private Master master;
 }

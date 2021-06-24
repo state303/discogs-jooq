@@ -28,10 +28,10 @@ public class ReleaseItemArtist extends BaseTimeEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_artist_release_item_id_release_item"))
     private ReleaseItem releaseItem;
 
     @ManyToOne
-    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_artist_artist_id_artist"))
     private Artist artist;
 }
