@@ -17,7 +17,8 @@ jobs:
       - name: Publish package
         run: gradle publish
         env:
-          # token that has access to package-related actions
           PKG_TOKEN: ${{ secrets.PKG_TOKEN }}
-          # github username
           USERNAME: ${{ secrets.USERNAME }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
