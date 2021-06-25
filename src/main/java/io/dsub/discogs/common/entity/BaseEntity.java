@@ -14,7 +14,6 @@ import java.io.Serializable;
 @ToString
 @RequiredArgsConstructor
 @MappedSuperclass
-@NoArgsConstructor
 @AllArgsConstructor
 public abstract class BaseEntity implements Serializable {
     @Version

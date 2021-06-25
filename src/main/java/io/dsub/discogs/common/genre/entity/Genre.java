@@ -16,7 +16,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "genre")
 public class Genre extends BaseEntity {

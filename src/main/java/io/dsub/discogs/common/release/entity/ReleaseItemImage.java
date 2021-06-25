@@ -10,7 +10,6 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(
         name = "release_item_image",
@@ -27,7 +26,7 @@ public class ReleaseItemImage {
 
     @Column(name = "file_name", length = 1000)
     private String fileName;
-    
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_image_release_item_id_release_item"))
     @ToString.Exclude

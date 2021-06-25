@@ -16,7 +16,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "label")
 public class Label extends BaseTimeEntity {

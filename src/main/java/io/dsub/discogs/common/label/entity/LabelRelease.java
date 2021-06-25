@@ -14,7 +14,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(
         name = "label_item_release",

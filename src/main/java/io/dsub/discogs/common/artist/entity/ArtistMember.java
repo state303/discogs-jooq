@@ -13,7 +13,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(
         name = "artist_member",
