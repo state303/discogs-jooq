@@ -2,15 +2,19 @@ package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 @Table(
         name = "release_item_identifier",
         uniqueConstraints = {
@@ -36,7 +40,21 @@ public class ReleaseItemIdentifier extends BaseTimeEntity {
     @Column(name = "value", length = 10000)
     private String value;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_identifier_release_item_id_release_item"))
     private ReleaseItem releaseItem;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        ReleaseItemIdentifier that = (ReleaseItemIdentifier) o;
+
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 173625288;
+    }
 }

@@ -2,17 +2,20 @@ package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
 @Builder
 @Entity
-@EqualsAndHashCode(callSuper = false)
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Table(name = "release_item")
@@ -56,4 +59,18 @@ public class ReleaseItem extends BaseTimeEntity {
 
     @Column(name = "release_date")
     private LocalDate releaseDate;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        ReleaseItem that = (ReleaseItem) o;
+
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 1789770120;
+    }
 }
