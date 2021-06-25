@@ -3,13 +3,14 @@ plugins {
     id 'maven-publish'
     id 'org.springframework.boot' version '2.5.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'nu.studer.jooq' version '5.2.1'
 }
 
 bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.0.2.3'
+version '0.0.2.4'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
@@ -20,10 +21,12 @@ repositories {
 }
 
 dependencies {
+    jooqGenerator 'org.postgresql:postgresql'
     implementation(
             'org.springframework.boot:spring-boot-starter-data-jpa',
             'org.springframework.boot:spring-boot-starter-aop',
             'org.projectlombok:lombok',
+            'org.springframework.boot:spring-boot-starter-jooq'
     )
     annotationProcessor (
             'org.projectlombok:lombok'
@@ -57,6 +60,41 @@ publishing {
                 }
                 usage('java-runtime') {
                     fromResolutionResult()
+                }
+            }
+        }
+    }
+}
+
+// jooq
+jooq {
+    configurations {
+        main {
+            generationTool {
+                logging = org.jooq.meta.jaxb.Logging.WARN
+                jdbc {
+                    driver = 'org.postgresql.Driver'
+                    url =  props.getProperty("POSTGRES_URL") ?: System.getenv("POSTGRES_URL")
+                    user = props.getProperty("POSTGRES_USER") ?: System.getenv("POSTGRES_USER")
+                    password = props.getProperty("POSTGRES_PASSWORD") ?: System.getenv("POSTGRES_PASSWORD")
+                }
+                generator {
+                    name = 'org.jooq.codegen.DefaultGenerator'
+                    database {
+                        name = 'org.jooq.meta.postgres.PostgresDatabase'
+                        inputSchema = 'public'
+                    }
+                    generate {
+                        deprecated = false
+                        records = true
+                        immutablePojos = true
+                        fluentSetters = true
+                    }
+                    target {
+                        packageName = 'io.dsub.discogs.common.jooq.postgres'
+                        directory = "build/generated-postgres/main"  // default (can be omitted)
+                    }
+                    strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
                 }
             }
         }
