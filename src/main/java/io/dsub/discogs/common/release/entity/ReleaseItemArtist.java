@@ -3,14 +3,17 @@ package io.dsub.discogs.common.release.entity;
 import io.dsub.discogs.common.artist.entity.Artist;
 import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Builder
-@EqualsAndHashCode(callSuper = false)
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(
         name = "release_item_artist",
@@ -27,11 +30,27 @@ public class ReleaseItemArtist extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_artist_release_item_id_release_item"))
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_artist_artist_id_artist"))
+    @ToString.Exclude
     private Artist artist;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        ReleaseItemArtist that = (ReleaseItemArtist) o;
+
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 42389727;
+    }
 }

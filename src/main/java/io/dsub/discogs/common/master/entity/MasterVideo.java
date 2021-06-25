@@ -2,14 +2,17 @@ package io.dsub.discogs.common.master.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
 @Builder
-@EqualsAndHashCode(callSuper = false)
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(
         name = "master_video",
@@ -35,7 +38,22 @@ public class MasterVideo extends BaseTimeEntity {
     @Column(name = "url", length = 5000)
     private String url;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_video_master_id_master"))
+    @ToString.Exclude
     private Master master;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        MasterVideo that = (MasterVideo) o;
+
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 1261579609;
+    }
 }
