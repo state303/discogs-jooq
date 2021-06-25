@@ -30,5 +30,6 @@ public class ReleaseItemImage {
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_image_release_item_id_release_item"))
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 }

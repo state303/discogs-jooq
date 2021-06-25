@@ -32,6 +32,7 @@ public class LabelUrl extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_url_label_id_label"))
+    @ToString.Exclude
     private Label label;
 
     @Column(length = 5000, name = "url", nullable = false)

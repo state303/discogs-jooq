@@ -33,10 +33,12 @@ public class MasterArtist extends BaseTimeEntity {
 
     @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_artist_master_id_master"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private Master master;
 
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_artist_artist_id_artist"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private Artist artist;
 
     @Override

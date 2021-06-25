@@ -32,10 +32,12 @@ public class ReleaseItemMaster extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_master_release_item_id_release_item"))
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_master_master_id_master"))
+    @ToString.Exclude
     private Master master;
 
     @Override

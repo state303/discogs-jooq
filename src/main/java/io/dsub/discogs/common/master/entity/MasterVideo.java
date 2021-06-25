@@ -41,6 +41,7 @@ public class MasterVideo extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "master_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_master_video_master_id_master"))
+    @ToString.Exclude
     private Master master;
 
     @Override

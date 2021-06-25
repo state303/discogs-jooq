@@ -33,10 +33,12 @@ public class ReleaseItemStyle extends BaseTimeEntity {
 
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_style_release_item_id_release_item"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
     @JoinColumn(name = "style", referencedColumnName = "name", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_style_style_style"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private Style style;
 
     @Override

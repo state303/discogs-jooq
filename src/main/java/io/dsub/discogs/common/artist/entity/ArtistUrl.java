@@ -32,6 +32,7 @@ public class ArtistUrl extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_url_artist_id_artist"))
+    @ToString.Exclude
     private Artist artist;
 
     @Column(length = 5000, name = "url", nullable = false)

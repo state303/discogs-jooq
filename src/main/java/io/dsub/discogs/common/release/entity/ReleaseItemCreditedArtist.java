@@ -34,10 +34,12 @@ public class ReleaseItemCreditedArtist extends BaseTimeEntity {
 
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_credited_artist_release_item_id_release_item"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_credited_artist_artist_id_artist"))
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
     private Artist artist;
 
     @Column(name = "role", length = 20000)

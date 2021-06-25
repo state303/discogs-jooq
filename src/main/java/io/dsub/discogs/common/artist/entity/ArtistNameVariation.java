@@ -32,6 +32,7 @@ public class ArtistNameVariation extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_name_variation_artist_id_artist"))
+    @ToString.Exclude
     private Artist artist;
 
     @Column(length = 2000, name = "name_variation", nullable = false)

@@ -47,6 +47,7 @@ public class ReleaseItemFormat extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_release_item_format_release_item_id_release_item"))
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
     @Override

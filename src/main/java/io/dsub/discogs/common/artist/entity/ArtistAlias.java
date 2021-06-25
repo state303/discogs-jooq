@@ -32,10 +32,12 @@ public class ArtistAlias extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "artist_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_alias_artist_id_artist"))
+    @ToString.Exclude
     private Artist artist;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "alias_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_artist_alias_alias_id_artist"))
+    @ToString.Exclude
     private Artist alias;
 
     @Override

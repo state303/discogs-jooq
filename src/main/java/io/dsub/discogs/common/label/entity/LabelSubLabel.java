@@ -35,10 +35,12 @@ public class LabelSubLabel extends BaseTimeEntity {
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "parent_label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_sub_label_parent_label_id_label"))
+    @ToString.Exclude
     private Label parent;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "sub_label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_sub_label_sub_label_id_label"))
+    @ToString.Exclude
     private Label subLabel;
 
     @Override

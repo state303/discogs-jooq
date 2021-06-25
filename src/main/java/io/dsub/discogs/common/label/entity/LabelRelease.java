@@ -33,10 +33,12 @@ public class LabelRelease extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "release_item_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_release_release_item_id_release_item"))
+    @ToString.Exclude
     private ReleaseItem releaseItem;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "label_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_label_release_label_id_label"))
+    @ToString.Exclude
     private Label label;
 
     @Column(name = "category_notation")
