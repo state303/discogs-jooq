@@ -177,7 +177,6 @@ CREATE TABLE IF NOT EXISTS master_video
 CREATE TABLE IF NOT EXISTS release_item
 (
     id                  SERIAL NOT NULL CONSTRAINT pk_release_item PRIMARY KEY,
-    version             BIGINT NOT NULL,
     created_at          TIMESTAMP NOT NULL,
     last_modified_at    TIMESTAMP NOT NULL,
     country             VARCHAR(255),
@@ -186,6 +185,7 @@ CREATE TABLE IF NOT EXISTS release_item
     has_valid_month     BOOLEAN,
     has_valid_year      BOOLEAN,
     is_master           BOOLEAN,
+    master_id           INTEGER,
     listed_release_date VARCHAR(255),
     notes               TEXT,
     release_date        DATE,
