@@ -1,13 +1,11 @@
 package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.master.entity.Master;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -23,12 +21,17 @@ public class ReleaseItem extends BaseTimeEntity {
 
     private static final Long SerialVersionUID = 1L;
 
-    @Column(name = "id", columnDefinition = "serial")
     @Id
+    @Column(name = "id", columnDefinition = "serial")
     private Long id;
 
     @Column(name = "is_master")
     private boolean isMaster;
+
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "master_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_release_item_master_id_master"))
+    private Master master;
 
     @Column(name = "status")
     private String status;
