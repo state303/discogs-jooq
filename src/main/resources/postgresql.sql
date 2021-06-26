@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS artist
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     data_quality     VARCHAR(255),
@@ -13,7 +12,6 @@ CREATE TABLE IF NOT EXISTS artist
 CREATE TABLE IF NOT EXISTS artist_alias
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist_alias PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     alias_id         INTEGER NOT NULL CONSTRAINT
@@ -28,7 +26,6 @@ CREATE TABLE IF NOT EXISTS artist_alias
 CREATE TABLE IF NOT EXISTS artist_group
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist_group PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     artist_id        INTEGER NOT NULL CONSTRAINT
@@ -43,7 +40,6 @@ CREATE TABLE IF NOT EXISTS artist_group
 CREATE TABLE IF NOT EXISTS artist_member
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist_member PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     artist_id        INTEGER NOT NULL CONSTRAINT
@@ -60,7 +56,6 @@ CREATE TABLE IF NOT EXISTS artist_name_variation
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist_name_variation
         PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     name_variation   VARCHAR(2000) NOT NULL,
@@ -74,7 +69,6 @@ CREATE TABLE IF NOT EXISTS artist_name_variation
 CREATE TABLE IF NOT EXISTS artist_url
 (
     id               SERIAL NOT NULL CONSTRAINT pk_artist_url PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     url              VARCHAR(5000) NOT NULL,
@@ -93,7 +87,6 @@ CREATE TABLE IF NOT EXISTS genre
 CREATE TABLE IF NOT EXISTS label
 (
     id               SERIAL NOT NULL CONSTRAINT pk_label PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     contact_info     VARCHAR(40000),
@@ -105,7 +98,6 @@ CREATE TABLE IF NOT EXISTS label
 CREATE TABLE IF NOT EXISTS label_sub_label
 (
     id               SERIAL NOT NULL CONSTRAINT pk_label_sub_label PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     parent_label_id  INTEGER NOT NULL CONSTRAINT
@@ -120,7 +112,6 @@ CREATE TABLE IF NOT EXISTS label_sub_label
 CREATE TABLE IF NOT EXISTS label_url
 (
     id               SERIAL NOT NULL CONSTRAINT pk_label_url PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     url              VARCHAR(5000) NOT NULL,
@@ -133,7 +124,6 @@ CREATE TABLE IF NOT EXISTS label_url
 CREATE TABLE IF NOT EXISTS master
 (
     id               SERIAL NOT NULL CONSTRAINT pk_master PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     data_quality     VARCHAR(255),
@@ -144,7 +134,6 @@ CREATE TABLE IF NOT EXISTS master
 CREATE TABLE IF NOT EXISTS master_artist
 (
     id               SERIAL NOT NULL CONSTRAINT pk_master_artist PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     artist_id        INTEGER NOT NULL CONSTRAINT
@@ -160,7 +149,6 @@ CREATE TABLE IF NOT EXISTS master_artist
 CREATE TABLE IF NOT EXISTS master_genre
 (
     id               SERIAL NOT NULL CONSTRAINT pk_master_genre PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     genre            VARCHAR(255) NOT NULL CONSTRAINT
@@ -175,7 +163,6 @@ CREATE TABLE IF NOT EXISTS master_genre
 CREATE TABLE IF NOT EXISTS master_video
 (
     id               SERIAL NOT NULL CONSTRAINT pk_master_video PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     description      VARCHAR(40000),
@@ -228,7 +215,6 @@ CREATE TABLE IF NOT EXISTS release_item_artist
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_artist PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     artist_id        INTEGER NOT NULL CONSTRAINT
@@ -245,7 +231,6 @@ CREATE TABLE IF NOT EXISTS release_item_credited_artist
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_credited_artist
         PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     role             VARCHAR(20000),
@@ -263,7 +248,6 @@ CREATE TABLE IF NOT EXISTS release_item_format
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_format PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     description      VARCHAR(10000),
@@ -281,7 +265,6 @@ CREATE TABLE IF NOT EXISTS release_item_genre
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_genre PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     genre            VARCHAR(255) NOT NULL CONSTRAINT
@@ -298,7 +281,6 @@ CREATE TABLE IF NOT EXISTS release_item_identifier
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_identifier
         PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     description      VARCHAR(20000),
@@ -326,7 +308,6 @@ CREATE TABLE IF NOT EXISTS release_item_master
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_master PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     master_id        INTEGER NOT NULL CONSTRAINT
@@ -343,7 +324,6 @@ CREATE TABLE IF NOT EXISTS release_item_track
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_track PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     duration         VARCHAR(5000),
@@ -360,7 +340,6 @@ CREATE TABLE IF NOT EXISTS release_item_video
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_video PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     description      VARCHAR(10000),
@@ -377,7 +356,6 @@ CREATE TABLE IF NOT EXISTS release_item_work
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_work PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     work             VARCHAR(5000),
@@ -400,7 +378,6 @@ CREATE TABLE IF NOT EXISTS style
 CREATE TABLE IF NOT EXISTS master_style
 (
     id               SERIAL NOT NULL CONSTRAINT pk_master_style PRIMARY KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     master_id        INTEGER NOT NULL CONSTRAINT
@@ -416,7 +393,6 @@ CREATE TABLE IF NOT EXISTS release_item_style
 (
     id               SERIAL NOT NULL CONSTRAINT pk_release_item_style PRIMARY
         KEY,
-    version          BIGINT NOT NULL,
     created_at       TIMESTAMP NOT NULL,
     last_modified_at TIMESTAMP NOT NULL,
     release_item_id  INTEGER NOT NULL CONSTRAINT
