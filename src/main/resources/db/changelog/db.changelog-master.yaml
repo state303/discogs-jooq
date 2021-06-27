@@ -1,0 +1,1749 @@
+databaseChangeLog:
+- changeSet:
+    id: 1624827949162-1
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist_alias
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: alias_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        tableName: artist_alias
+- changeSet:
+    id: 1624827949162-2
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_label
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: contact_info
+            type: VARCHAR(40000)
+        - column:
+            name: data_quality
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: profile
+            type: VARCHAR(40000)
+        tableName: label
+- changeSet:
+    id: 1624827949162-3
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_genre
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: genre
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_genre
+- changeSet:
+    id: 1624827949162-4
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_track
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: duration
+            type: VARCHAR(5000)
+        - column:
+            name: position
+            type: VARCHAR(15000)
+        - column:
+            name: title
+            type: VARCHAR(15000)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_track
+- changeSet:
+    id: 1624827949162-5
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_label_item_release
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: version
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: category_notation
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: label_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: label_item_release
+- changeSet:
+    id: 1624827949162-6
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_image
+            name: id
+            type: INTEGER
+        - column:
+            name: file_name
+            type: VARCHAR(1000)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_image
+- changeSet:
+    id: 1624827949162-7
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_style
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: version
+            type: BIGINT
+        tableName: style
+- changeSet:
+    id: 1624827949162-8
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_genre
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: version
+            type: BIGINT
+        tableName: genre
+- changeSet:
+    id: 1624827949162-9
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_master_video
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: description
+            type: VARCHAR(40000)
+        - column:
+            name: title
+            type: VARCHAR(2000)
+        - column:
+            name: url
+            type: VARCHAR(5000)
+        - column:
+            constraints:
+              nullable: false
+            name: master_id
+            type: INTEGER
+        tableName: master_video
+- changeSet:
+    id: 1624827949162-10
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: country
+            type: VARCHAR(255)
+        - column:
+            name: data_quality
+            type: VARCHAR(255)
+        - column:
+            name: has_valid_day
+            type: BOOLEAN
+        - column:
+            name: has_valid_month
+            type: BOOLEAN
+        - column:
+            name: has_valid_year
+            type: BOOLEAN
+        - column:
+            name: is_master
+            type: BOOLEAN
+        - column:
+            name: master_id
+            type: INTEGER
+        - column:
+            name: listed_release_date
+            type: VARCHAR(255)
+        - column:
+            name: notes
+            type: TEXT
+        - column:
+            name: release_date
+            type: date
+        - column:
+            name: status
+            type: VARCHAR(255)
+        - column:
+            name: title
+            type: VARCHAR(10000)
+        tableName: release_item
+- changeSet:
+    id: 1624827949162-11
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_work
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: work
+            type: VARCHAR(5000)
+        - column:
+            constraints:
+              nullable: false
+            name: label_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_work
+- changeSet:
+    id: 1624827949162-12
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_master
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: master_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_master
+- changeSet:
+    id: 1624827949162-13
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist_name_variation
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: name_variation
+            type: VARCHAR(2000)
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        tableName: artist_name_variation
+- changeSet:
+    id: 1624827949162-14
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_master_artist
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: master_id
+            type: INTEGER
+        tableName: master_artist
+- changeSet:
+    id: 1624827949162-15
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_master_genre
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: genre
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: master_id
+            type: INTEGER
+        tableName: master_genre
+- changeSet:
+    id: 1624827949162-16
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_identifier
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: description
+            type: VARCHAR(20000)
+        - column:
+            name: type
+            type: VARCHAR(10000)
+        - column:
+            name: value
+            type: VARCHAR(10000)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_identifier
+- changeSet:
+    id: 1624827949162-17
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_artist
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_artist
+- changeSet:
+    id: 1624827949162-18
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_master
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: data_quality
+            type: VARCHAR(255)
+        - column:
+            name: title
+            type: VARCHAR(2000)
+        - column:
+            name: year
+            type: SMALLINT(5)
+        tableName: master
+- changeSet:
+    id: 1624827949162-19
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_credited_artist
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: role
+            type: VARCHAR(20000)
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_credited_artist
+- changeSet:
+    id: 1624827949162-20
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_master_style
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: master_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: style
+            type: VARCHAR(255)
+        tableName: master_style
+- changeSet:
+    id: 1624827949162-21
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_style
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: style
+            type: VARCHAR(255)
+        tableName: release_item_style
+- changeSet:
+    id: 1624827949162-22
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_label_sub_label
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: parent_label_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: sub_label_id
+            type: INTEGER
+        tableName: label_sub_label
+- changeSet:
+    id: 1624827949162-23
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist_url
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: url
+            type: VARCHAR(5000)
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        tableName: artist_url
+- changeSet:
+    id: 1624827949162-24
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_video
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: description
+            type: VARCHAR(10000)
+        - column:
+            name: title
+            type: VARCHAR(10000)
+        - column:
+            name: url
+            type: VARCHAR(10000)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_video
+- changeSet:
+    id: 1624827949162-25
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_label_url
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: url
+            type: VARCHAR(5000)
+        - column:
+            constraints:
+              nullable: false
+            name: label_id
+            type: INTEGER
+        tableName: label_url
+- changeSet:
+    id: 1624827949162-26
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist_group
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: group_id
+            type: INTEGER
+        tableName: artist_group
+- changeSet:
+    id: 1624827949162-27
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_release_item_format
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: description
+            type: VARCHAR(10000)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: quantity
+            type: INTEGER
+        - column:
+            name: text
+            type: VARCHAR(5000)
+        - column:
+            constraints:
+              nullable: false
+            name: release_item_id
+            type: INTEGER
+        tableName: release_item_format
+- changeSet:
+    id: 1624827949162-28
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist_member
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: artist_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: member_id
+            type: INTEGER
+        tableName: artist_member
+- changeSet:
+    id: 1624827949162-29
+    author: Seunghyun Bosco Bae
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: pk_artist
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: last_modified_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: data_quality
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(1000)
+        - column:
+            name: profile
+            type: VARCHAR(40000)
+        - column:
+            name: real_name
+            type: VARCHAR(2000)
+        tableName: artist
+- changeSet:
+    id: 1624827949162-30
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: artist_id, alias_id
+        constraintName: uq_artist_alias_artist_id_alias_id
+        tableName: artist_alias
+- changeSet:
+    id: 1624827949162-31
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, genre
+        constraintName: uq_release_item_genre_release_item_id_genre
+        tableName: release_item_genre
+- changeSet:
+    id: 1624827949162-32
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: position, title, duration, release_item_id
+        constraintName: uq_release_item_track_position_title_duration_release_item_id
+        tableName: release_item_track
+- changeSet:
+    id: 1624827949162-33
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: label_id
+        baseTableName: label_item_release
+        constraintName: fk_label_release_label_id_label
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: label
+        validate: true
+- changeSet:
+    id: 1624827949162-34
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, label_id
+        constraintName: uq_label_item_release_release_item_id_label_id
+        tableName: label_item_release
+- changeSet:
+    id: 1624827949162-35
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: file_name
+        constraintName: uq_release_item_image_file_name
+        tableName: release_item_image
+- changeSet:
+    id: 1624827949162-36
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: master_id, url
+        constraintName: uq_master_video_master_id_url
+        tableName: master_video
+- changeSet:
+    id: 1624827949162-37
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: label_id
+        baseTableName: release_item_work
+        constraintName: fk_release_item_work_label_id_label
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: label
+        validate: true
+- changeSet:
+    id: 1624827949162-38
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_work
+        constraintName: fk_release_item_work_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-39
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, label_id, work
+        constraintName: uq_release_item_work_release_item_id_label_id_work
+        tableName: release_item_work
+- changeSet:
+    id: 1624827949162-40
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_master
+        constraintName: fk_release_item_master_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-41
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, master_id
+        constraintName: uq_release_item_master_release_item_id_master_id
+        tableName: release_item_master
+- changeSet:
+    id: 1624827949162-42
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: artist_id, name_variation
+        constraintName: uq_artist_name_variation_artist_id_name
+        tableName: artist_name_variation
+- changeSet:
+    id: 1624827949162-43
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: master_id, artist_id
+        constraintName: uq_master_artist_master_id_artist_id
+        tableName: master_artist
+- changeSet:
+    id: 1624827949162-44
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: genre
+        baseTableName: master_genre
+        constraintName: fk_master_genre_genre_genre
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: name
+        referencedTableName: genre
+        validate: true
+- changeSet:
+    id: 1624827949162-45
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: master_id, genre
+        constraintName: uq_master_genre_master_id_genre
+        tableName: master_genre
+- changeSet:
+    id: 1624827949162-46
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_identifier
+        constraintName: fk_release_item_identifier_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-47
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: type, description, value, release_item_id
+        constraintName: uq_identifier_type_description_value_release_item_id
+        tableName: release_item_identifier
+- changeSet:
+    id: 1624827949162-48
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_artist
+        constraintName: fk_release_item_artist_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-49
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, artist_id
+        constraintName: uq_release_item_artist_release_item_id_artist_id
+        tableName: release_item_artist
+- changeSet:
+    id: 1624827949162-50
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_credited_artist
+        constraintName: fk_release_item_credited_artist_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-51
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, artist_id, role
+        constraintName: uq_release_item_credited_artist_release_item_id_artist_id_role
+        tableName: release_item_credited_artist
+- changeSet:
+    id: 1624827949162-52
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: master_id
+        baseTableName: master_style
+        constraintName: fk_master_style_master_id_master
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: master
+        validate: true
+- changeSet:
+    id: 1624827949162-53
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: style
+        baseTableName: master_style
+        constraintName: fk_master_style_style_style
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: name
+        referencedTableName: style
+        validate: true
+- changeSet:
+    id: 1624827949162-54
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: master_id, style
+        constraintName: uq_master_style_master_id_style
+        tableName: master_style
+- changeSet:
+    id: 1624827949162-55
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_style
+        constraintName: fk_release_item_style_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-56
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: style
+        baseTableName: release_item_style
+        constraintName: fk_release_item_style_style_style
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: name
+        referencedTableName: style
+        validate: true
+- changeSet:
+    id: 1624827949162-57
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, style
+        constraintName: uq_release_item_style_release_item_id_style
+        tableName: release_item_style
+- changeSet:
+    id: 1624827949162-58
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parent_label_id
+        baseTableName: label_sub_label
+        constraintName: fk_label_sub_label_parent_label_id_label
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: label
+        validate: true
+- changeSet:
+    id: 1624827949162-59
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: sub_label_id
+        baseTableName: label_sub_label
+        constraintName: fk_label_sub_label_sub_label_id_label
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: label
+        validate: true
+- changeSet:
+    id: 1624827949162-60
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: parent_label_id, sub_label_id
+        constraintName: uq_label_sub_label_parent_label_id_sub_label_id
+        tableName: label_sub_label
+- changeSet:
+    id: 1624827949162-61
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: artist_id, url
+        constraintName: uq_artist_url_artist_id_url
+        tableName: artist_url
+- changeSet:
+    id: 1624827949162-62
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_video
+        constraintName: fk_release_item_video_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-63
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: release_item_id, url
+        constraintName: uq_release_item_video_release_item_id_url
+        tableName: release_item_video
+- changeSet:
+    id: 1624827949162-64
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: label_id
+        baseTableName: label_url
+        constraintName: fk_label_url_label_id_label
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: label
+        validate: true
+- changeSet:
+    id: 1624827949162-65
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: label_id, url
+        constraintName: uq_label_url_label_id_url
+        tableName: label_url
+- changeSet:
+    id: 1624827949162-66
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: artist_id, group_id
+        constraintName: uq_artist_group_artist_id_group_id
+        tableName: artist_group
+- changeSet:
+    id: 1624827949162-67
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_format
+        constraintName: fk_release_item_format_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-68
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: name, quantity, text, release_item_id
+        constraintName: uq_release_item_format_name_quantity_text_release_item_id
+        tableName: release_item_format
+- changeSet:
+    id: 1624827949162-69
+    author: Seunghyun Bosco Bae
+    changes:
+    - addUniqueConstraint:
+        columnNames: artist_id, member_id
+        constraintName: uq_artist_member_artist_id_member_id
+        tableName: artist_member
+- changeSet:
+    id: 1624827949162-70
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: alias_id
+        baseTableName: artist_alias
+        constraintName: fk_artist_alias_alias_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-71
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: artist_alias
+        constraintName: fk_artist_alias_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-72
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: genre
+        baseTableName: release_item_genre
+        constraintName: fk_release_item_genre_genre_genre
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: name
+        referencedTableName: genre
+        validate: true
+- changeSet:
+    id: 1624827949162-73
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_genre
+        constraintName: fk_release_item_genre_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-74
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_track
+        constraintName: fk_release_item_track_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-75
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: label_item_release
+        constraintName: fk_label_release_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-76
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: release_item_id
+        baseTableName: release_item_image
+        constraintName: fk_release_item_image_release_item_id_release_item
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: release_item
+        validate: true
+- changeSet:
+    id: 1624827949162-77
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: master_id
+        baseTableName: master_video
+        constraintName: fk_master_video_master_id_master
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: master
+        validate: true
+- changeSet:
+    id: 1624827949162-78
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: master_id
+        baseTableName: release_item_master
+        constraintName: fk_release_item_master_master_id_master
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: master
+        validate: true
+- changeSet:
+    id: 1624827949162-79
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: artist_name_variation
+        constraintName: fk_artist_name_variation_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-80
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: master_artist
+        constraintName: fk_master_artist_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-81
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: master_id
+        baseTableName: master_artist
+        constraintName: fk_master_artist_master_id_master
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: master
+        validate: true
+- changeSet:
+    id: 1624827949162-82
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: master_id
+        baseTableName: master_genre
+        constraintName: fk_master_genre_master_id_master
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: master
+        validate: true
+- changeSet:
+    id: 1624827949162-83
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: release_item_artist
+        constraintName: fk_release_item_artist_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-84
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: release_item_credited_artist
+        constraintName: fk_release_item_credited_artist_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-85
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: artist_url
+        constraintName: fk_artist_url_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-86
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: artist_group
+        constraintName: fk_artist_group_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-87
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: group_id
+        baseTableName: artist_group
+        constraintName: fk_artist_group_group_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-88
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: artist_id
+        baseTableName: artist_member
+        constraintName: fk_artist_member_artist_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+- changeSet:
+    id: 1624827949162-89
+    author: Seunghyun Bosco Bae
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: member_id
+        baseTableName: artist_member
+        constraintName: fk_artist_member_member_id_artist
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: artist
+        validate: true
+
