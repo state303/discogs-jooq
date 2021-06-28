@@ -157,11 +157,6 @@ databaseChangeLog:
         - column:
             constraints:
               nullable: false
-            name: version
-            type: BIGINT
-        - column:
-            constraints:
-              nullable: false
             name: created_at
             type: TIMESTAMP WITHOUT TIME ZONE
         - column:
@@ -217,11 +212,6 @@ databaseChangeLog:
               primaryKeyName: pk_style
             name: name
             type: VARCHAR(255)
-        - column:
-            constraints:
-              nullable: false
-            name: version
-            type: BIGINT
         tableName: style
 - changeSet:
     id: 1624918933185-8
@@ -235,11 +225,6 @@ databaseChangeLog:
               primaryKeyName: pk_genre
             name: name
             type: VARCHAR(255)
-        - column:
-            constraints:
-              nullable: false
-            name: version
-            type: BIGINT
         tableName: genre
 - changeSet:
     id: 1624918933185-9
