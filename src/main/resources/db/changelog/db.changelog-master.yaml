@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 1624827949162-1
+    id: 1624918933185-1
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -34,7 +34,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: artist_alias
 - changeSet:
-    id: 1624827949162-2
+    id: 1624918933185-2
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -70,7 +70,7 @@ databaseChangeLog:
             type: VARCHAR(40000)
         tableName: label
 - changeSet:
-    id: 1624827949162-3
+    id: 1624918933185-3
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -104,7 +104,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_genre
 - changeSet:
-    id: 1624827949162-4
+    id: 1624918933185-4
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -142,7 +142,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_track
 - changeSet:
-    id: 1624827949162-5
+    id: 1624918933185-5
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -184,7 +184,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: label_item_release
 - changeSet:
-    id: 1624827949162-6
+    id: 1624918933185-6
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -206,7 +206,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_image
 - changeSet:
-    id: 1624827949162-7
+    id: 1624918933185-7
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -224,7 +224,7 @@ databaseChangeLog:
             type: BIGINT
         tableName: style
 - changeSet:
-    id: 1624827949162-8
+    id: 1624918933185-8
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -242,7 +242,7 @@ databaseChangeLog:
             type: BIGINT
         tableName: genre
 - changeSet:
-    id: 1624827949162-9
+    id: 1624918933185-9
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -280,7 +280,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: master_video
 - changeSet:
-    id: 1624827949162-10
+    id: 1624918933185-10
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -340,7 +340,7 @@ databaseChangeLog:
             type: VARCHAR(10000)
         tableName: release_item
 - changeSet:
-    id: 1624827949162-11
+    id: 1624918933185-11
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -377,41 +377,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_work
 - changeSet:
-    id: 1624827949162-12
-    author: Seunghyun Bosco Bae
-    changes:
-    - createTable:
-        columns:
-        - column:
-            autoIncrement: true
-            constraints:
-              primaryKey: true
-              primaryKeyName: pk_release_item_master
-            name: id
-            type: INTEGER
-        - column:
-            constraints:
-              nullable: false
-            name: created_at
-            type: TIMESTAMP WITHOUT TIME ZONE
-        - column:
-            constraints:
-              nullable: false
-            name: last_modified_at
-            type: TIMESTAMP WITHOUT TIME ZONE
-        - column:
-            constraints:
-              nullable: false
-            name: master_id
-            type: INTEGER
-        - column:
-            constraints:
-              nullable: false
-            name: release_item_id
-            type: INTEGER
-        tableName: release_item_master
-- changeSet:
-    id: 1624827949162-13
+    id: 1624918933185-13
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -445,7 +411,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: artist_name_variation
 - changeSet:
-    id: 1624827949162-14
+    id: 1624918933185-14
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -479,7 +445,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: master_artist
 - changeSet:
-    id: 1624827949162-15
+    id: 1624918933185-15
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -513,7 +479,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: master_genre
 - changeSet:
-    id: 1624827949162-16
+    id: 1624918933185-16
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -551,7 +517,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_identifier
 - changeSet:
-    id: 1624827949162-17
+    id: 1624918933185-17
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -585,7 +551,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_artist
 - changeSet:
-    id: 1624827949162-18
+    id: 1624918933185-18
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -615,10 +581,10 @@ databaseChangeLog:
             type: VARCHAR(2000)
         - column:
             name: year
-            type: SMALLINT(5)
+            type: SMALLINT
         tableName: master
 - changeSet:
-    id: 1624827949162-19
+    id: 1624918933185-19
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -655,7 +621,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_credited_artist
 - changeSet:
-    id: 1624827949162-20
+    id: 1624918933185-20
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -689,7 +655,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: master_style
 - changeSet:
-    id: 1624827949162-21
+    id: 1624918933185-21
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -723,7 +689,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: release_item_style
 - changeSet:
-    id: 1624827949162-22
+    id: 1624918933185-22
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -757,7 +723,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: label_sub_label
 - changeSet:
-    id: 1624827949162-23
+    id: 1624918933185-23
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -791,7 +757,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: artist_url
 - changeSet:
-    id: 1624827949162-24
+    id: 1624918933185-24
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -829,7 +795,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_video
 - changeSet:
-    id: 1624827949162-25
+    id: 1624918933185-25
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -863,7 +829,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: label_url
 - changeSet:
-    id: 1624827949162-26
+    id: 1624918933185-26
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -897,7 +863,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: artist_group
 - changeSet:
-    id: 1624827949162-27
+    id: 1624918933185-27
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -938,7 +904,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: release_item_format
 - changeSet:
-    id: 1624827949162-28
+    id: 1624918933185-28
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -972,7 +938,7 @@ databaseChangeLog:
             type: INTEGER
         tableName: artist_member
 - changeSet:
-    id: 1624827949162-29
+    id: 1624918933185-29
     author: Seunghyun Bosco Bae
     changes:
     - createTable:
@@ -1008,7 +974,7 @@ databaseChangeLog:
             type: VARCHAR(2000)
         tableName: artist
 - changeSet:
-    id: 1624827949162-30
+    id: 1624918933185-30
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1016,7 +982,7 @@ databaseChangeLog:
         constraintName: uq_artist_alias_artist_id_alias_id
         tableName: artist_alias
 - changeSet:
-    id: 1624827949162-31
+    id: 1624918933185-31
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1024,7 +990,7 @@ databaseChangeLog:
         constraintName: uq_release_item_genre_release_item_id_genre
         tableName: release_item_genre
 - changeSet:
-    id: 1624827949162-32
+    id: 1624918933185-32
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1032,7 +998,7 @@ databaseChangeLog:
         constraintName: uq_release_item_track_position_title_duration_release_item_id
         tableName: release_item_track
 - changeSet:
-    id: 1624827949162-33
+    id: 1624918933185-33
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1047,7 +1013,7 @@ databaseChangeLog:
         referencedTableName: label
         validate: true
 - changeSet:
-    id: 1624827949162-34
+    id: 1624918933185-34
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1055,7 +1021,7 @@ databaseChangeLog:
         constraintName: uq_label_item_release_release_item_id_label_id
         tableName: label_item_release
 - changeSet:
-    id: 1624827949162-35
+    id: 1624918933185-35
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1063,7 +1029,7 @@ databaseChangeLog:
         constraintName: uq_release_item_image_file_name
         tableName: release_item_image
 - changeSet:
-    id: 1624827949162-36
+    id: 1624918933185-36
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1071,7 +1037,7 @@ databaseChangeLog:
         constraintName: uq_master_video_master_id_url
         tableName: master_video
 - changeSet:
-    id: 1624827949162-37
+    id: 1624918933185-37
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1086,7 +1052,7 @@ databaseChangeLog:
         referencedTableName: label
         validate: true
 - changeSet:
-    id: 1624827949162-38
+    id: 1624918933185-38
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1101,7 +1067,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-39
+    id: 1624918933185-39
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1109,30 +1075,7 @@ databaseChangeLog:
         constraintName: uq_release_item_work_release_item_id_label_id_work
         tableName: release_item_work
 - changeSet:
-    id: 1624827949162-40
-    author: Seunghyun Bosco Bae
-    changes:
-    - addForeignKeyConstraint:
-        baseColumnNames: release_item_id
-        baseTableName: release_item_master
-        constraintName: fk_release_item_master_release_item_id_release_item
-        deferrable: false
-        initiallyDeferred: false
-        onDelete: NO ACTION
-        onUpdate: NO ACTION
-        referencedColumnNames: id
-        referencedTableName: release_item
-        validate: true
-- changeSet:
-    id: 1624827949162-41
-    author: Seunghyun Bosco Bae
-    changes:
-    - addUniqueConstraint:
-        columnNames: release_item_id, master_id
-        constraintName: uq_release_item_master_release_item_id_master_id
-        tableName: release_item_master
-- changeSet:
-    id: 1624827949162-42
+    id: 1624918933185-42
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1140,7 +1083,7 @@ databaseChangeLog:
         constraintName: uq_artist_name_variation_artist_id_name
         tableName: artist_name_variation
 - changeSet:
-    id: 1624827949162-43
+    id: 1624918933185-43
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1148,7 +1091,7 @@ databaseChangeLog:
         constraintName: uq_master_artist_master_id_artist_id
         tableName: master_artist
 - changeSet:
-    id: 1624827949162-44
+    id: 1624918933185-44
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1163,7 +1106,7 @@ databaseChangeLog:
         referencedTableName: genre
         validate: true
 - changeSet:
-    id: 1624827949162-45
+    id: 1624918933185-45
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1171,7 +1114,7 @@ databaseChangeLog:
         constraintName: uq_master_genre_master_id_genre
         tableName: master_genre
 - changeSet:
-    id: 1624827949162-46
+    id: 1624918933185-46
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1186,7 +1129,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-47
+    id: 1624918933185-47
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1194,7 +1137,7 @@ databaseChangeLog:
         constraintName: uq_identifier_type_description_value_release_item_id
         tableName: release_item_identifier
 - changeSet:
-    id: 1624827949162-48
+    id: 1624918933185-48
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1209,7 +1152,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-49
+    id: 1624918933185-49
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1217,7 +1160,7 @@ databaseChangeLog:
         constraintName: uq_release_item_artist_release_item_id_artist_id
         tableName: release_item_artist
 - changeSet:
-    id: 1624827949162-50
+    id: 1624918933185-50
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1232,7 +1175,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-51
+    id: 1624918933185-51
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1240,7 +1183,7 @@ databaseChangeLog:
         constraintName: uq_release_item_credited_artist_release_item_id_artist_id_role
         tableName: release_item_credited_artist
 - changeSet:
-    id: 1624827949162-52
+    id: 1624918933185-52
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1255,7 +1198,7 @@ databaseChangeLog:
         referencedTableName: master
         validate: true
 - changeSet:
-    id: 1624827949162-53
+    id: 1624918933185-53
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1270,7 +1213,7 @@ databaseChangeLog:
         referencedTableName: style
         validate: true
 - changeSet:
-    id: 1624827949162-54
+    id: 1624918933185-54
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1278,7 +1221,7 @@ databaseChangeLog:
         constraintName: uq_master_style_master_id_style
         tableName: master_style
 - changeSet:
-    id: 1624827949162-55
+    id: 1624918933185-55
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1293,7 +1236,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-56
+    id: 1624918933185-56
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1308,7 +1251,7 @@ databaseChangeLog:
         referencedTableName: style
         validate: true
 - changeSet:
-    id: 1624827949162-57
+    id: 1624918933185-57
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1316,7 +1259,7 @@ databaseChangeLog:
         constraintName: uq_release_item_style_release_item_id_style
         tableName: release_item_style
 - changeSet:
-    id: 1624827949162-58
+    id: 1624918933185-58
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1331,7 +1274,7 @@ databaseChangeLog:
         referencedTableName: label
         validate: true
 - changeSet:
-    id: 1624827949162-59
+    id: 1624918933185-59
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1346,7 +1289,7 @@ databaseChangeLog:
         referencedTableName: label
         validate: true
 - changeSet:
-    id: 1624827949162-60
+    id: 1624918933185-60
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1354,7 +1297,7 @@ databaseChangeLog:
         constraintName: uq_label_sub_label_parent_label_id_sub_label_id
         tableName: label_sub_label
 - changeSet:
-    id: 1624827949162-61
+    id: 1624918933185-61
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1362,7 +1305,7 @@ databaseChangeLog:
         constraintName: uq_artist_url_artist_id_url
         tableName: artist_url
 - changeSet:
-    id: 1624827949162-62
+    id: 1624918933185-62
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1377,7 +1320,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-63
+    id: 1624918933185-63
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1385,7 +1328,7 @@ databaseChangeLog:
         constraintName: uq_release_item_video_release_item_id_url
         tableName: release_item_video
 - changeSet:
-    id: 1624827949162-64
+    id: 1624918933185-64
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1400,7 +1343,7 @@ databaseChangeLog:
         referencedTableName: label
         validate: true
 - changeSet:
-    id: 1624827949162-65
+    id: 1624918933185-65
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1408,7 +1351,7 @@ databaseChangeLog:
         constraintName: uq_label_url_label_id_url
         tableName: label_url
 - changeSet:
-    id: 1624827949162-66
+    id: 1624918933185-66
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1416,7 +1359,7 @@ databaseChangeLog:
         constraintName: uq_artist_group_artist_id_group_id
         tableName: artist_group
 - changeSet:
-    id: 1624827949162-67
+    id: 1624918933185-67
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1431,7 +1374,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-68
+    id: 1624918933185-68
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1439,7 +1382,7 @@ databaseChangeLog:
         constraintName: uq_release_item_format_name_quantity_text_release_item_id
         tableName: release_item_format
 - changeSet:
-    id: 1624827949162-69
+    id: 1624918933185-69
     author: Seunghyun Bosco Bae
     changes:
     - addUniqueConstraint:
@@ -1447,7 +1390,7 @@ databaseChangeLog:
         constraintName: uq_artist_member_artist_id_member_id
         tableName: artist_member
 - changeSet:
-    id: 1624827949162-70
+    id: 1624918933185-70
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1462,7 +1405,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-71
+    id: 1624918933185-71
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1477,7 +1420,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-72
+    id: 1624918933185-72
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1492,7 +1435,7 @@ databaseChangeLog:
         referencedTableName: genre
         validate: true
 - changeSet:
-    id: 1624827949162-73
+    id: 1624918933185-73
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1507,7 +1450,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-74
+    id: 1624918933185-74
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1522,7 +1465,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-75
+    id: 1624918933185-75
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1537,7 +1480,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-76
+    id: 1624918933185-76
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1552,7 +1495,7 @@ databaseChangeLog:
         referencedTableName: release_item
         validate: true
 - changeSet:
-    id: 1624827949162-77
+    id: 1624918933185-77
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1567,22 +1510,7 @@ databaseChangeLog:
         referencedTableName: master
         validate: true
 - changeSet:
-    id: 1624827949162-78
-    author: Seunghyun Bosco Bae
-    changes:
-    - addForeignKeyConstraint:
-        baseColumnNames: master_id
-        baseTableName: release_item_master
-        constraintName: fk_release_item_master_master_id_master
-        deferrable: false
-        initiallyDeferred: false
-        onDelete: NO ACTION
-        onUpdate: NO ACTION
-        referencedColumnNames: id
-        referencedTableName: master
-        validate: true
-- changeSet:
-    id: 1624827949162-79
+    id: 1624918933185-79
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1597,7 +1525,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-80
+    id: 1624918933185-80
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1612,7 +1540,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-81
+    id: 1624918933185-81
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1627,7 +1555,7 @@ databaseChangeLog:
         referencedTableName: master
         validate: true
 - changeSet:
-    id: 1624827949162-82
+    id: 1624918933185-82
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1642,7 +1570,7 @@ databaseChangeLog:
         referencedTableName: master
         validate: true
 - changeSet:
-    id: 1624827949162-83
+    id: 1624918933185-83
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1657,7 +1585,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-84
+    id: 1624918933185-84
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1672,7 +1600,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-85
+    id: 1624918933185-85
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1687,7 +1615,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-86
+    id: 1624918933185-86
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1702,7 +1630,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-87
+    id: 1624918933185-87
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1717,7 +1645,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-88
+    id: 1624918933185-88
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1732,7 +1660,7 @@ databaseChangeLog:
         referencedTableName: artist
         validate: true
 - changeSet:
-    id: 1624827949162-89
+    id: 1624918933185-89
     author: Seunghyun Bosco Bae
     changes:
     - addForeignKeyConstraint:
@@ -1746,4 +1674,3 @@ databaseChangeLog:
         referencedColumnNames: id
         referencedTableName: artist
         validate: true
-
