@@ -1659,3 +1659,47 @@ databaseChangeLog:
         referencedColumnNames: id
         referencedTableName: artist
         validate: true
+- changeSet:
+      id: 1624918933185-90
+      author: Seunghyun Bosco Bae
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: master_id
+                baseTableName: release_item
+                nullable: true
+                constraintName: fk_release_item_master_id_master
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: id
+                referencedTableName: master
+                validate: true
+
+- changeSet:
+      id: 1624918933185-91
+      author: Seunghyun Bosco Bae
+      changes:
+          - addColumn:
+                tableName: master
+                columns:
+                    - column:
+                          name: main_release_id
+                          type: INTEGER
+
+- changeSet:
+      id: 1624918933185-92
+      author: Seunghyun Bosco Bae
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: main_release_id
+                baseTableName: master
+                nullable: true
+                constraintName: fk_master_main_release_id_release_item
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: id
+                referencedTableName: release_item
+                validate: true
