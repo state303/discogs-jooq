@@ -1,13 +1,11 @@
 package io.dsub.discogs.common.master.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.release.entity.ReleaseItem;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
@@ -25,6 +23,11 @@ public class Master extends BaseTimeEntity {
     @Column(name = "id", columnDefinition = "serial")
     @Id
     private Long id;
+
+    @JoinColumn(name = "main_release_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_master_main_release_id_release_item"))
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ToString.Exclude
+    private ReleaseItem mainRelease;
 
     @Column(name = "year")
     private short year;
