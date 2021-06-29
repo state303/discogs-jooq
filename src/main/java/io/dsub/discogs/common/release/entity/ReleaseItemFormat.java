@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,12 +19,11 @@ import java.util.Objects;
         name = "release_item_format",
         uniqueConstraints =
         @UniqueConstraint(
-                name = "uq_release_item_format_name_quantity_text_release_item_id",
+                name = "uq_release_item_format_release_item_id_hash",
                 columnNames = {
-                        "name", "quantity",
-                        "text", "release_item_id"
+                        "release_item_id", "hash"
                 }))
-public class ReleaseItemFormat extends BaseTimeEntity {
+public class ReleaseItemFormat extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -61,5 +61,10 @@ public class ReleaseItemFormat extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 1156093036;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{name, description, text};
     }
 }

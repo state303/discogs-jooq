@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.master.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,9 +19,9 @@ import java.util.Objects;
         name = "master_video",
         uniqueConstraints =
         @UniqueConstraint(
-                name = "uq_master_video_master_id_url",
-                columnNames = {"master_id", "url"}))
-public class MasterVideo extends BaseTimeEntity {
+                name = "uq_master_video_master_id_hash",
+                columnNames = {"master_id", "hash"}))
+public class MasterVideo extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -32,7 +33,7 @@ public class MasterVideo extends BaseTimeEntity {
     @Column(name = "title", length = 2000)
     private String title;
 
-    @Column(name = "description", length = 40000)
+    @Column(name = "description", length = 15000)
     private String description;
 
     @Column(name = "url", length = 5000)
@@ -55,5 +56,10 @@ public class MasterVideo extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 1261579609;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{title, description, url};
     }
 }

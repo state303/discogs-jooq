@@ -1,6 +1,6 @@
 package io.dsub.discogs.common.artist.entity;
 
-import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,9 +18,9 @@ import java.util.Objects;
         name = "artist_name_variation",
         uniqueConstraints =
         @UniqueConstraint(
-                name = "uq_artist_name_variation_artist_id_name",
-                columnNames = {"artist_id", "name_variation"}))
-public class ArtistNameVariation extends BaseTimeEntity {
+                name = "uq_artist_name_variation_artist_id_hash",
+                columnNames = {"artist_id", "hash"}))
+public class ArtistNameVariation extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -49,5 +49,10 @@ public class ArtistNameVariation extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 847051869;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{name};
     }
 }

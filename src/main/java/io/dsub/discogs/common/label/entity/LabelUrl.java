@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.label.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,9 +19,9 @@ import java.util.Objects;
         name = "label_url",
         uniqueConstraints =
         @UniqueConstraint(
-                name = "uq_label_url_label_id_url",
-                columnNames = {"label_id", "url"}))
-public class LabelUrl extends BaseTimeEntity {
+                name = "uq_label_url_label_id_hash",
+                columnNames = {"label_id", "hash"}))
+public class LabelUrl extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -49,5 +50,10 @@ public class LabelUrl extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 179226694;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{url};
     }
 }

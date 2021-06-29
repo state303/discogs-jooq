@@ -4,10 +4,7 @@ import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
@@ -29,10 +26,12 @@ public class Label extends BaseTimeEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "contact_info", length = 40000)
+    @Lob
+    @Column(name = "contact_info") // nvarchar
     private String contactInfo;
 
-    @Column(name = "profile", length = 40000)
+    @Lob
+    @Column(name = "profile") // nvarchar
     private String profile;
 
     @Column(name = "data_quality")
