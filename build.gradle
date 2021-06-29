@@ -1,3 +1,5 @@
+import java.util.function.Function
+
 plugins {
     id 'java'
     id 'maven-publish'
@@ -11,7 +13,7 @@ bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.0.2.11'
+version '0.0.2.12'
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
@@ -22,18 +24,24 @@ repositories {
 }
 
 dependencies {
-    jooqGenerator 'org.postgresql:postgresql'
+    jooqGenerator (
+            'org.slf4j:slf4j-simple:1.7.9',
+            'org.postgresql:postgresql',
+            'org.testcontainers:postgresql:1.15.3',
+            'mysql:mysql-connector-java'
+    )
     implementation(
             'org.springframework.boot:spring-boot-starter-data-jpa',
             'org.springframework.boot:spring-boot-starter-aop',
-            'org.projectlombok:lombok',
-            'org.springframework.boot:spring-boot-starter-jooq'
+            'org.jooq:jooq',
+            'org.projectlombok:lombok'
     )
     liquibaseRuntime (
             'org.liquibase:liquibase-core:3.8.1',
             'org.liquibase:liquibase-groovy-dsl:2.1.1',
             'javax.xml.bind:jaxb-api:2.3.1',
             'org.postgresql:postgresql',
+            'mysql:mysql-connector-java',
             'org.yaml:snakeyaml:1.15'
     )
     annotationProcessor(
@@ -47,14 +55,18 @@ if (file(".env").exists()) {
     file(".env").withInputStream { props.load(it) }
 }
 
+Function<String, String> getPropVal = name -> {
+    props.getProperty(name) ?: System.getenv(name)
+}
+
 publishing {
     repositories {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/state303/discogs-common")
             credentials {
-                username = props.getProperty("USERNAME") ?: System.getenv("USERNAME")
-                password = props.getProperty("PKG_TOKEN") ?: System.getenv("PKG_TOKEN")
+                username = getPropVal("USERNAME");
+                password = getPropVal("PKG_TOKEN");
             }
         }
     }
@@ -73,21 +85,18 @@ publishing {
         }
     }
 }
-
 // jooq
 jooq {
     configurations {
-        main {
+        postgresql {
             generationTool {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc {
-                    driver = 'org.postgresql.Driver'
-                    url = props.getProperty("POSTGRES_URL") ?: System.getenv("POSTGRES_URL")
-                    user = props.getProperty("POSTGRES_USER") ?: System.getenv("POSTGRES_USER")
-                    password = props.getProperty("POSTGRES_PASSWORD") ?: System.getenv("POSTGRES_PASSWORD")
+                    driver = "org.testcontainers.jdbc.ContainerDatabaseDriver"
+                    url = "jdbc:tc:postgresql:///databasename?TC_INITSCRIPT=file:${projectDir}/src/main/resources/postgresql-init.sql"
                 }
                 generator {
-                    name = 'org.jooq.codegen.DefaultGenerator'
+                    name = 'org.jooq.codegen.JavaGenerator'
                     database {
                         inputSchema = 'public'
                     }
@@ -96,12 +105,41 @@ jooq {
                         records = true
                         immutablePojos = false
                         fluentSetters = true
+                        javaTimeTypes = true
                     }
                     target {
                         packageName = 'io.dsub.discogs.common.jooq.postgres'
                         directory = "build/generated-postgres/main"  // default (can be omitted)
                     }
-                    strategy.name = 'org.jooq.codegen.example.JPrefixGeneratorStrategy'
+                    strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+                }
+            }
+        }
+        mysql {
+            generationTool {
+                logging = org.jooq.meta.jaxb.Logging.WARN
+                jdbc {
+                    driver = 'com.mysql.cj.jdbc.Driver'
+                    url = getPropVal('MYSQL_URL')
+                    user = getPropVal('MYSQL_USER')
+                    password = getPropVal('MYSQL_PASSWORD')
+                }
+                generator {
+                    name = 'org.jooq.codegen.JavaGenerator'
+                    database {
+                        inputSchema = 'discogs'
+                    }
+                    generate {
+                        deprecated = false
+                        records = true
+                        immutablePojos = false
+                        fluentSetters = true
+                    }
+                    target {
+                        packageName = 'io.dsub.discogs.common.jooq.mysql'
+                        directory = "build/generated-mysql/main"  // default (can be omitted)
+                    }
+                    strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
                 }
             }
         }
@@ -113,20 +151,31 @@ liquibase {
         configure {
             main {
                 changeLogFile 'src/main/resources/db/changelog/db.changelog-master.yaml'
-                url props.getProperty("POSTGRES_URL") ?: System.getenv("POSTGRES_URL")
-                username props.getProperty("POSTGRES_USER") ?: System.getenv("POSTGRES_USER")
-                password props.getProperty("POSTGRES_PASSWORD") ?: System.getenv("POSTGRES_PASSWORD")
-                changeSetAuthor props.getProperty("AUTHOR") ?: System.getenv("AUTHOR")
+                url getPropVal('POSTGRES_URL')
+                username getPropVal('POSTGRES_USER')
+                password getPropVal('POSTGRES_PASSWORD')
+                changeSetAuthor getPropVal('AUTHOR')
             }
         }
     }
 }
 
 // participates for gradle incremental build
-tasks.named('generateJooq').configure {
-    // make jOOQ task participate in incremental builds (which is also a prerequisite for participating in build caching)
-    allInputsDeclared = true
+def names = ['generateMysqlJooq', 'generatePostgresqlJooq']
 
-    // make jOOQ task participate in build caching
-    outputs.cacheIf { true }
+names.forEach(jooqTask -> {
+    tasks.named(jooqTask).configure {
+        // make jOOQ task participate in incremental builds (which is also a prerequisite for participating in build caching)
+        allInputsDeclared = true
+
+        // make jOOQ task participate in build caching
+        outputs.cacheIf { true }
+    }
+})
+//
+
+sourceSets.main.java.srcDirs (tasks.named('generatePostgresqlJooq').flatMap { it.outputDir })
+
+if (getPropVal("MYSQL_URL") != null) {
+    sourceSets.main.java.srcDirs (tasks.named('generateMysqlJooq').flatMap { it.outputDir })
 }

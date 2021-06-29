@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import io.dsub.discogs.common.label.entity.Label;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -19,10 +20,10 @@ import java.util.Objects;
         name = "release_item_work",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uq_release_item_work_release_item_id_label_id_work",
-                        columnNames = {"release_item_id", "label_id", "work"})
+                        name = "uq_release_item_work_release_item_id_label_id_hash",
+                        columnNames = {"release_item_id", "label_id", "hash"})
         })
-public class ReleaseItemWork extends BaseTimeEntity {
+public class ReleaseItemWork extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -56,5 +57,10 @@ public class ReleaseItemWork extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 1329613920;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{work};
     }
 }

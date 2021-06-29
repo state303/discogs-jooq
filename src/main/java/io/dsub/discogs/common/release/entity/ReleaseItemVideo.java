@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,9 +19,9 @@ import java.util.Objects;
         name = "release_item_video",
         uniqueConstraints =
         @UniqueConstraint(
-                name = "uq_release_item_video_release_item_id_url",
-                columnNames = {"release_item_id", "url"}))
-public class ReleaseItemVideo extends BaseTimeEntity {
+                name = "uq_release_item_video_release_item_id_hash",
+                columnNames = {"release_item_id", "hash"}))
+public class ReleaseItemVideo extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -29,13 +30,16 @@ public class ReleaseItemVideo extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "title", length = 10000)
+    @Lob
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "description", length = 10000)
+    @Lob
+    @Column(name = "description")
     private String description;
 
-    @Column(name = "url", length = 10000)
+    @Lob
+    @Column(name = "url")
     private String url;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -55,5 +59,10 @@ public class ReleaseItemVideo extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 1607902271;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{title, description, url};
     }
 }

@@ -4,10 +4,7 @@ import io.dsub.discogs.common.entity.BaseTimeEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
@@ -26,13 +23,14 @@ public class Artist extends BaseTimeEntity {
     @Column(name = "id", columnDefinition = "serial")
     private Long id;
 
-    @Column(name = "name", length = 1000)
+    @Column(name = "name", length = 1000) // nvarchar
     private String name;
 
-    @Column(name = "real_name", length = 2000)
+    @Column(name = "real_name", length = 2000) // nvarchar
     private String realName;
 
-    @Column(name = "profile", length = 40000)
+    @Lob
+    @Column(name = "profile") // nvarchar
     private String profile;
 
     @Column(name = "data_quality")

@@ -1,6 +1,7 @@
 package io.dsub.discogs.common.release.entity;
 
 import io.dsub.discogs.common.entity.BaseTimeEntity;
+import io.dsub.discogs.common.entity.HashEntity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -18,10 +19,10 @@ import java.util.Objects;
         name = "release_item_identifier",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "uq_identifier_type_description_value_release_item_id",
-                        columnNames = {"type", "description", "value", "release_item_id"})
+                        name = "uq_release_item_identifier_release_item_id_hash",
+                        columnNames = {"release_item_id", "hash"})
         })
-public class ReleaseItemIdentifier extends BaseTimeEntity {
+public class ReleaseItemIdentifier extends HashEntity {
 
     private static final Long SerialVersionUID = 1L;
 
@@ -30,13 +31,16 @@ public class ReleaseItemIdentifier extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "type", length = 10000)
+    @Lob
+    @Column(name = "type")
     private String type;
 
-    @Column(name = "description", length = 20000)
+    @Lob
+    @Column(name = "description")
     private String description;
 
-    @Column(name = "value", length = 10000)
+    @Lob
+    @Column(name = "value")
     private String value;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -56,5 +60,10 @@ public class ReleaseItemIdentifier extends BaseTimeEntity {
     @Override
     public int hashCode() {
         return 173625288;
+    }
+
+    @Override
+    protected String[] getHashCandidates() {
+        return new String[]{type, description, value};
     }
 }
