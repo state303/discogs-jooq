@@ -11,7 +11,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist_alias
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -26,12 +26,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: alias_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         tableName: artist_alias
 - changeSet:
     id: 1624918933185-2
@@ -45,7 +45,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_label
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -81,7 +81,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_genre
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -101,7 +101,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_genre
 - changeSet:
     id: 1624918933185-4
@@ -115,7 +115,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_track
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -144,7 +144,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_track
 - changeSet:
     id: 1624918933185-5
@@ -158,7 +158,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_label_item_release
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -176,12 +176,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: label_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: label_item_release
 - changeSet:
     id: 1624918933185-6
@@ -195,7 +195,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_image
             name: id
-            type: bigint
+            type: int
         - column:
               constraints:
                   nullable: false
@@ -218,7 +218,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_image
 - changeSet:
     id: 1624918933185-7
@@ -258,7 +258,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_master_video
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -287,7 +287,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: master_id
-            type: bigint
+            type: int
         tableName: master_video
 - changeSet:
     id: 1624918933185-10
@@ -301,7 +301,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -332,7 +332,7 @@ databaseChangeLog:
             type: boolean
         - column:
             name: master_id
-            type: bigint
+            type: int
         - column:
             name: listed_release_date
             type: nvarchar(255)
@@ -361,7 +361,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_work
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -384,12 +384,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: label_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_work
 - changeSet:
     id: 1624918933185-13
@@ -403,7 +403,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist_name_variation
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -428,7 +428,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         tableName: artist_name_variation
 - changeSet:
     id: 1624918933185-14
@@ -442,7 +442,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_master_artist
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -457,12 +457,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: master_id
-            type: bigint
+            type: int
         tableName: master_artist
 - changeSet:
     id: 1624918933185-15
@@ -476,7 +476,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_master_genre
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -496,7 +496,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: master_id
-            type: bigint
+            type: int
         tableName: master_genre
 - changeSet:
     id: 1624918933185-16
@@ -510,7 +510,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_identifier
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -539,7 +539,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_identifier
 - changeSet:
     id: 1624918933185-17
@@ -553,7 +553,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_artist
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -568,12 +568,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_artist
 - changeSet:
     id: 1624918933185-18
@@ -587,7 +587,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_master
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -620,7 +620,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_credited_artist
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -643,12 +643,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_credited_artist
 - changeSet:
     id: 1624918933185-20
@@ -662,7 +662,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_master_style
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -677,7 +677,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: master_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -696,7 +696,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_style
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -711,7 +711,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -730,7 +730,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_label_sub_label
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -745,12 +745,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: parent_label_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: sub_label_id
-            type: bigint
+            type: int
         tableName: label_sub_label
 - changeSet:
     id: 1624918933185-23
@@ -764,7 +764,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist_url
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -789,7 +789,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         tableName: artist_url
 - changeSet:
     id: 1624918933185-24
@@ -803,7 +803,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_video
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -832,7 +832,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_video
 - changeSet:
     id: 1624918933185-25
@@ -846,7 +846,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_label_url
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -871,7 +871,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: label_id
-            type: bigint
+            type: int
         tableName: label_url
 - changeSet:
     id: 1624918933185-26
@@ -885,7 +885,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist_group
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -900,12 +900,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: group_id
-            type: bigint
+            type: int
         tableName: artist_group
 - changeSet:
     id: 1624918933185-27
@@ -919,7 +919,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_release_item_format
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -943,7 +943,7 @@ databaseChangeLog:
             type: nvarchar(255)
         - column:
             name: quantity
-            type: bigint
+            type: int
         - column:
             name: text
             type: nvarchar(5000)
@@ -951,7 +951,7 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: release_item_id
-            type: bigint
+            type: int
         tableName: release_item_format
 - changeSet:
     id: 1624918933185-28
@@ -965,7 +965,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist_member
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -980,12 +980,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: artist_id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
             name: member_id
-            type: bigint
+            type: int
         tableName: artist_member
 - changeSet:
     id: 1624918933185-29
@@ -999,7 +999,7 @@ databaseChangeLog:
               primaryKey: true
               primaryKeyName: pk_artist
             name: id
-            type: bigint
+            type: int
         - column:
             constraints:
               nullable: false
@@ -1749,7 +1749,7 @@ databaseChangeLog:
                 columns:
                     - column:
                           name: main_release_id
-                          type: bigint
+                          type: int
 - changeSet:
       id: 1624918933185-92
       author: Seunghyun Bosco Bae
