@@ -81,21 +81,21 @@ create table if not exists public.release_item_track
         unique (release_item_id, hash)
 );
 
-create table if not exists public.label_item_release
+create table if not exists public.label_release_item
 (
     id                serial
-        constraint pk_label_item_release
+        constraint pk_label_release_item
             primary key,
     created_at        timestamp not null,
     last_modified_at  timestamp not null,
-    category_notation varchar(255),
+    category_notation varchar(1000),
     label_id          integer   not null
         constraint fk_label_release_label_id_label
             references public.label,
     release_item_id   integer   not null
         constraint fk_label_release_release_item_id_release_item
             references public.release_item,
-    constraint uq_label_item_release_release_item_id_label_id
+    constraint uq_label_release_item_release_item_id_label_id
         unique (release_item_id, label_id)
 );
 

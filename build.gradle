@@ -6,14 +6,14 @@ plugins {
     id 'org.springframework.boot' version '2.5.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'org.liquibase.gradle' version '2.0.3'
-    id 'nu.studer.jooq' version '5.2.1'
+    id 'nu.studer.jooq' version '5.2.2'
 }
 
 bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.0.2.13'
+version '0.0.2.14'
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
@@ -134,6 +134,7 @@ jooq {
                         records = true
                         immutablePojos = false
                         fluentSetters = true
+                        javaTimeTypes = true
                     }
                     target {
                         packageName = 'io.dsub.discogs.common.jooq.mysql'
