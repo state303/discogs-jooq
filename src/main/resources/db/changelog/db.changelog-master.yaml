@@ -156,7 +156,7 @@ databaseChangeLog:
             autoIncrement: true
             constraints:
               primaryKey: true
-              primaryKeyName: pk_label_item_release
+              primaryKeyName: pk_label_release_item
             name: id
             type: int
         - column:
@@ -171,7 +171,7 @@ databaseChangeLog:
             type: timestamp
         - column:
             name: category_notation
-            type: nvarchar(255)
+            type: nvarchar(1000)
         - column:
             constraints:
               nullable: false
@@ -182,7 +182,7 @@ databaseChangeLog:
               nullable: false
             name: release_item_id
             type: int
-        tableName: label_item_release
+        tableName: label_release_item
 - changeSet:
     id: 1624918933185-6
     author: Seunghyun Bosco Bae
@@ -1053,7 +1053,7 @@ databaseChangeLog:
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: label_id
-        baseTableName: label_item_release
+        baseTableName: label_release_item
         constraintName: fk_label_release_label_id_label
         deferrable: false
         initiallyDeferred: false
@@ -1068,8 +1068,8 @@ databaseChangeLog:
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, label_id
-        constraintName: uq_label_item_release_release_item_id_label_id
-        tableName: label_item_release
+        constraintName: uq_label_release_item_release_item_id_label_id
+        tableName: label_release_item
 - changeSet:
     id: 1624918933185-35
     author: Seunghyun Bosco Bae
@@ -1520,7 +1520,7 @@ databaseChangeLog:
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
-        baseTableName: label_item_release
+        baseTableName: label_release_item
         constraintName: fk_label_release_release_item_id_release_item
         deferrable: false
         initiallyDeferred: false
