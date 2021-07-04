@@ -13,7 +13,7 @@ bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.discogs'
-version '0.0.2.14'
+version '0.0.2.15'
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
@@ -88,7 +88,7 @@ publishing {
 // jooq
 jooq {
     configurations {
-        postgresql {
+        main {
             generationTool {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc {
@@ -108,37 +108,8 @@ jooq {
                         javaTimeTypes = true
                     }
                     target {
-                        packageName = 'io.dsub.discogs.common.jooq.postgres'
-                        directory = "build/generated-postgres/main"  // default (can be omitted)
-                    }
-                    strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
-                }
-            }
-        }
-        mysql {
-            generationTool {
-                logging = org.jooq.meta.jaxb.Logging.WARN
-                jdbc {
-                    driver = 'com.mysql.cj.jdbc.Driver'
-                    url = getPropVal('MYSQL_URL')
-                    user = getPropVal('MYSQL_USER')
-                    password = getPropVal('MYSQL_PASSWORD')
-                }
-                generator {
-                    name = 'org.jooq.codegen.JavaGenerator'
-                    database {
-                        inputSchema = 'discogs'
-                    }
-                    generate {
-                        deprecated = false
-                        records = true
-                        immutablePojos = false
-                        fluentSetters = true
-                        javaTimeTypes = true
-                    }
-                    target {
-                        packageName = 'io.dsub.discogs.common.jooq.mysql'
-                        directory = "build/generated-mysql/main"  // default (can be omitted)
+                        packageName = 'io.dsub.discogs.common.jooq'
+                        directory = "build/generated/main"  // default (can be omitted)
                     }
                     strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
                 }
@@ -161,22 +132,12 @@ liquibase {
     }
 }
 
-// participates for gradle incremental build
-def names = ['generateMysqlJooq', 'generatePostgresqlJooq']
+tasks.named('generateJooq').configure {
+    // make jOOQ task participate in incremental builds (which is also a prerequisite for participating in build caching)
+    allInputsDeclared = true
 
-names.forEach(jooqTask -> {
-    tasks.named(jooqTask).configure {
-        // make jOOQ task participate in incremental builds (which is also a prerequisite for participating in build caching)
-        allInputsDeclared = true
-
-        // make jOOQ task participate in build caching
-        outputs.cacheIf { true }
-    }
-})
-//
-
-sourceSets.main.java.srcDirs (tasks.named('generatePostgresqlJooq').flatMap { it.outputDir })
-
-if (getPropVal("MYSQL_URL") != null) {
-    sourceSets.main.java.srcDirs (tasks.named('generateMysqlJooq').flatMap { it.outputDir })
+    // make jOOQ task participate in build caching
+    outputs.cacheIf { true }
 }
+
+sourceSets.main.java.srcDirs (tasks.named('generateJooq').flatMap { it.outputDir })
