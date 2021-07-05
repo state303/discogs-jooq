@@ -1,7 +1,7 @@
 databaseChangeLog:
 - changeSet:
     id: 1624918933185-1
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -35,7 +35,7 @@ databaseChangeLog:
         tableName: artist_alias
 - changeSet:
     id: 1624918933185-2
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -71,7 +71,7 @@ databaseChangeLog:
         tableName: label
 - changeSet:
     id: 1624918933185-3
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -105,7 +105,7 @@ databaseChangeLog:
         tableName: release_item_genre
 - changeSet:
     id: 1624918933185-4
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -148,7 +148,7 @@ databaseChangeLog:
         tableName: release_item_track
 - changeSet:
     id: 1624918933185-5
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -185,7 +185,7 @@ databaseChangeLog:
         tableName: label_release_item
 - changeSet:
     id: 1624918933185-6
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -222,7 +222,7 @@ databaseChangeLog:
         tableName: release_item_image
 - changeSet:
     id: 1624918933185-7
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -235,7 +235,7 @@ databaseChangeLog:
         tableName: style
 - changeSet:
     id: 1624918933185-8
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -248,7 +248,7 @@ databaseChangeLog:
         tableName: genre
 - changeSet:
     id: 1624918933185-9
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -291,7 +291,7 @@ databaseChangeLog:
         tableName: master_video
 - changeSet:
     id: 1624918933185-10
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -351,7 +351,7 @@ databaseChangeLog:
         tableName: release_item
 - changeSet:
     id: 1624918933185-11
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -393,7 +393,7 @@ databaseChangeLog:
         tableName: release_item_work
 - changeSet:
     id: 1624918933185-13
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -432,7 +432,7 @@ databaseChangeLog:
         tableName: artist_name_variation
 - changeSet:
     id: 1624918933185-14
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -466,7 +466,7 @@ databaseChangeLog:
         tableName: master_artist
 - changeSet:
     id: 1624918933185-15
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -500,7 +500,7 @@ databaseChangeLog:
         tableName: master_genre
 - changeSet:
     id: 1624918933185-16
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -543,7 +543,7 @@ databaseChangeLog:
         tableName: release_item_identifier
 - changeSet:
     id: 1624918933185-17
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -577,7 +577,7 @@ databaseChangeLog:
         tableName: release_item_artist
 - changeSet:
     id: 1624918933185-18
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -610,7 +610,7 @@ databaseChangeLog:
         tableName: master
 - changeSet:
     id: 1624918933185-19
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -652,7 +652,7 @@ databaseChangeLog:
         tableName: release_item_credited_artist
 - changeSet:
     id: 1624918933185-20
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -686,7 +686,7 @@ databaseChangeLog:
         tableName: master_style
 - changeSet:
     id: 1624918933185-21
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -720,7 +720,7 @@ databaseChangeLog:
         tableName: release_item_style
 - changeSet:
     id: 1624918933185-22
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -754,7 +754,7 @@ databaseChangeLog:
         tableName: label_sub_label
 - changeSet:
     id: 1624918933185-23
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -793,7 +793,7 @@ databaseChangeLog:
         tableName: artist_url
 - changeSet:
     id: 1624918933185-24
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -836,7 +836,7 @@ databaseChangeLog:
         tableName: release_item_video
 - changeSet:
     id: 1624918933185-25
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -875,7 +875,7 @@ databaseChangeLog:
         tableName: label_url
 - changeSet:
     id: 1624918933185-26
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -909,7 +909,7 @@ databaseChangeLog:
         tableName: artist_group
 - changeSet:
     id: 1624918933185-27
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -955,7 +955,7 @@ databaseChangeLog:
         tableName: release_item_format
 - changeSet:
     id: 1624918933185-28
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -989,7 +989,7 @@ databaseChangeLog:
         tableName: artist_member
 - changeSet:
     id: 1624918933185-29
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - createTable:
         columns:
@@ -1025,7 +1025,7 @@ databaseChangeLog:
         tableName: artist
 - changeSet:
     id: 1624918933185-30
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: artist_id, alias_id
@@ -1033,7 +1033,7 @@ databaseChangeLog:
         tableName: artist_alias
 - changeSet:
     id: 1624918933185-31
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, genre
@@ -1041,7 +1041,7 @@ databaseChangeLog:
         tableName: release_item_genre
 - changeSet:
     id: 1624918933185-32
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, hash
@@ -1049,7 +1049,7 @@ databaseChangeLog:
         tableName: release_item_track
 - changeSet:
     id: 1624918933185-33
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: label_id
@@ -1064,7 +1064,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-34
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, label_id
@@ -1072,7 +1072,7 @@ databaseChangeLog:
         tableName: label_release_item
 - changeSet:
     id: 1624918933185-35
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, hash
@@ -1080,7 +1080,7 @@ databaseChangeLog:
         tableName: release_item_image
 - changeSet:
     id: 1624918933185-36
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: master_id, hash
@@ -1088,7 +1088,7 @@ databaseChangeLog:
         tableName: master_video
 - changeSet:
     id: 1624918933185-37
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: label_id
@@ -1103,7 +1103,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-38
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1118,7 +1118,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-39
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, label_id, hash
@@ -1126,7 +1126,7 @@ databaseChangeLog:
         tableName: release_item_work
 - changeSet:
     id: 1624918933185-42
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: artist_id, hash
@@ -1134,7 +1134,7 @@ databaseChangeLog:
         tableName: artist_name_variation
 - changeSet:
     id: 1624918933185-43
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: master_id, artist_id
@@ -1142,7 +1142,7 @@ databaseChangeLog:
         tableName: master_artist
 - changeSet:
     id: 1624918933185-44
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: genre
@@ -1157,7 +1157,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-45
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: master_id, genre
@@ -1165,7 +1165,7 @@ databaseChangeLog:
         tableName: master_genre
 - changeSet:
     id: 1624918933185-46
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1180,7 +1180,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-47
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, hash
@@ -1188,7 +1188,7 @@ databaseChangeLog:
         tableName: release_item_identifier
 - changeSet:
     id: 1624918933185-48
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1203,7 +1203,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-49
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, artist_id
@@ -1211,7 +1211,7 @@ databaseChangeLog:
         tableName: release_item_artist
 - changeSet:
     id: 1624918933185-50
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1226,7 +1226,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-51
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, artist_id, hash
@@ -1234,7 +1234,7 @@ databaseChangeLog:
         tableName: release_item_credited_artist
 - changeSet:
     id: 1624918933185-52
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: master_id
@@ -1249,7 +1249,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-53
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: style
@@ -1264,7 +1264,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-54
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: master_id, style
@@ -1272,7 +1272,7 @@ databaseChangeLog:
         tableName: master_style
 - changeSet:
     id: 1624918933185-55
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1287,7 +1287,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-56
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: style
@@ -1302,7 +1302,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-57
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, style
@@ -1310,7 +1310,7 @@ databaseChangeLog:
         tableName: release_item_style
 - changeSet:
     id: 1624918933185-58
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: parent_label_id
@@ -1325,7 +1325,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-59
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: sub_label_id
@@ -1340,7 +1340,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-60
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: parent_label_id, sub_label_id
@@ -1348,7 +1348,7 @@ databaseChangeLog:
         tableName: label_sub_label
 - changeSet:
     id: 1624918933185-61
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: artist_id, hash
@@ -1356,7 +1356,7 @@ databaseChangeLog:
         tableName: artist_url
 - changeSet:
     id: 1624918933185-62
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1371,7 +1371,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-63
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, hash
@@ -1379,7 +1379,7 @@ databaseChangeLog:
         tableName: release_item_video
 - changeSet:
     id: 1624918933185-64
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: label_id
@@ -1394,7 +1394,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-65
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: label_id, hash
@@ -1402,7 +1402,7 @@ databaseChangeLog:
         tableName: label_url
 - changeSet:
     id: 1624918933185-66
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: artist_id, group_id
@@ -1410,7 +1410,7 @@ databaseChangeLog:
         tableName: artist_group
 - changeSet:
     id: 1624918933185-67
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1425,7 +1425,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-68
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: release_item_id, hash
@@ -1433,7 +1433,7 @@ databaseChangeLog:
         tableName: release_item_format
 - changeSet:
     id: 1624918933185-69
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addUniqueConstraint:
         columnNames: artist_id, member_id
@@ -1441,7 +1441,7 @@ databaseChangeLog:
         tableName: artist_member
 - changeSet:
     id: 1624918933185-70
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: alias_id
@@ -1456,7 +1456,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-71
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1471,7 +1471,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-72
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: genre
@@ -1486,7 +1486,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-73
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1501,7 +1501,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-74
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1516,7 +1516,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-75
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1531,7 +1531,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-76
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: release_item_id
@@ -1546,7 +1546,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-77
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: master_id
@@ -1561,7 +1561,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-79
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1576,7 +1576,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-80
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1591,7 +1591,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-81
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: master_id
@@ -1606,7 +1606,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-82
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: master_id
@@ -1621,7 +1621,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-83
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1636,7 +1636,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-84
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1651,7 +1651,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-85
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1666,7 +1666,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-86
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1681,7 +1681,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-87
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: group_id
@@ -1696,7 +1696,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-88
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: artist_id
@@ -1711,7 +1711,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
     id: 1624918933185-89
-    author: Seunghyun Bosco Bae
+    author: state303
     changes:
     - addForeignKeyConstraint:
         baseColumnNames: member_id
@@ -1726,7 +1726,7 @@ databaseChangeLog:
         validate: true
 - changeSet:
       id: 1624918933185-90
-      author: Seunghyun Bosco Bae
+      author: state303
       changes:
           - addForeignKeyConstraint:
                 baseColumnNames: master_id
@@ -1742,7 +1742,7 @@ databaseChangeLog:
                 validate: true
 - changeSet:
       id: 1624918933185-91
-      author: Seunghyun Bosco Bae
+      author: state303
       changes:
           - addColumn:
                 tableName: master
@@ -1752,7 +1752,7 @@ databaseChangeLog:
                           type: int
 - changeSet:
       id: 1624918933185-92
-      author: Seunghyun Bosco Bae
+      author: state303
       changes:
           - addForeignKeyConstraint:
                 baseColumnNames: main_release_id
@@ -1766,3 +1766,351 @@ databaseChangeLog:
                 referencedColumnNames: id
                 referencedTableName: release_item
                 validate: true
+- changeSet:
+      id: 1625491424218-1
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: job_execution_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: type_cd
+                          type: VARCHAR(6)
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: key_name
+                          type: VARCHAR(100)
+                    - column:
+                          name: string_val
+                          type: VARCHAR(250)
+                    - column:
+                          name: date_val
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: long_val
+                          type: BIGINT
+                    - column:
+                          name: double_val
+                          type: FLOAT8
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: identifying
+                          type: CHAR(1)
+                tableName: batch_job_execution_params
+- changeSet:
+      id: 1625491424218-2
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              primaryKey: true
+                              primaryKeyName: batch_job_instance_pkey
+                          name: job_instance_id
+                          type: BIGINT
+                    - column:
+                          name: version
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: job_name
+                          type: VARCHAR(100)
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: job_key
+                          type: VARCHAR(32)
+                tableName: batch_job_instance
+- changeSet:
+      id: 1625491424218-3
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              primaryKey: true
+                              primaryKeyName: batch_job_execution_pkey
+                          name: job_execution_id
+                          type: BIGINT
+                    - column:
+                          name: version
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: job_instance_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: create_time
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: start_time
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: end_time
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: status
+                          type: VARCHAR(10)
+                    - column:
+                          name: exit_code
+                          type: VARCHAR(2500)
+                    - column:
+                          name: exit_message
+                          type: VARCHAR(2500)
+                    - column:
+                          name: last_updated
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: job_configuration_location
+                          type: VARCHAR(2500)
+                tableName: batch_job_execution
+- changeSet:
+      id: 1625491424218-4
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              primaryKey: true
+                              primaryKeyName: batch_step_execution_context_pkey
+                          name: step_execution_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: short_context
+                          type: VARCHAR(2500)
+                    - column:
+                          name: serialized_context
+                          type: TEXT
+                tableName: batch_step_execution_context
+- changeSet:
+      id: 1625491424218-5
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              primaryKey: true
+                              primaryKeyName: batch_job_execution_context_pkey
+                          name: job_execution_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: short_context
+                          type: VARCHAR(2500)
+                    - column:
+                          name: serialized_context
+                          type: TEXT
+                tableName: batch_job_execution_context
+- changeSet:
+      id: 1625491424218-6
+      author: state303
+      changes:
+          - createTable:
+                columns:
+                    - column:
+                          constraints:
+                              primaryKey: true
+                              primaryKeyName: batch_step_execution_pkey
+                          name: step_execution_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: version
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: step_name
+                          type: VARCHAR(100)
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: job_execution_id
+                          type: BIGINT
+                    - column:
+                          constraints:
+                              nullable: false
+                          name: start_time
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: end_time
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                    - column:
+                          name: status
+                          type: VARCHAR(10)
+                    - column:
+                          name: commit_count
+                          type: BIGINT
+                    - column:
+                          name: read_count
+                          type: BIGINT
+                    - column:
+                          name: filter_count
+                          type: BIGINT
+                    - column:
+                          name: write_count
+                          type: BIGINT
+                    - column:
+                          name: read_skip_count
+                          type: BIGINT
+                    - column:
+                          name: write_skip_count
+                          type: BIGINT
+                    - column:
+                          name: process_skip_count
+                          type: BIGINT
+                    - column:
+                          name: rollback_count
+                          type: BIGINT
+                    - column:
+                          name: exit_code
+                          type: VARCHAR(2500)
+                    - column:
+                          name: exit_message
+                          type: VARCHAR(2500)
+                    - column:
+                          name: last_updated
+                          type: TIMESTAMP WITHOUT TIME ZONE
+                tableName: batch_step_execution
+- changeSet:
+      id: 1625491424218-7
+      author: state303
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: job_instance_id
+                baseTableName: batch_job_execution
+                constraintName: job_inst_exec_fk
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: job_instance_id
+                referencedTableName: batch_job_instance
+                validate: true
+- changeSet:
+      id: 1625491424218-8
+      author: state303
+      changes:
+          - addUniqueConstraint:
+                columnNames: job_name, job_key
+                constraintName: job_inst_un
+                tableName: batch_job_instance
+- changeSet:
+      id: 1625491424218-9
+      author: state303
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: job_execution_id
+                baseTableName: batch_job_execution_context
+                constraintName: job_exec_ctx_fk
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: job_execution_id
+                referencedTableName: batch_job_execution
+                validate: true
+- changeSet:
+      id: 1625491424218-10
+      author: state303
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: job_execution_id
+                baseTableName: batch_job_execution_params
+                constraintName: job_exec_params_fk
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: job_execution_id
+                referencedTableName: batch_job_execution
+                validate: true
+- changeSet:
+      id: 1625491424218-11
+      author: state303
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: job_execution_id
+                baseTableName: batch_step_execution
+                constraintName: job_exec_step_fk
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: job_execution_id
+                referencedTableName: batch_job_execution
+                validate: true
+- changeSet:
+      id: 1625491424218-12
+      author: state303
+      changes:
+          - addForeignKeyConstraint:
+                baseColumnNames: step_execution_id
+                baseTableName: batch_step_execution_context
+                constraintName: step_exec_ctx_fk
+                deferrable: false
+                initiallyDeferred: false
+                onDelete: NO ACTION
+                onUpdate: NO ACTION
+                referencedColumnNames: step_execution_id
+                referencedTableName: batch_step_execution
+                validate: true
+- changeSet:
+      id: 1625491424218-13
+      author: state303
+      changes:
+          - createSequence:
+                cacheSize: 1
+                cycle: false
+                dataType: bigint
+                incrementBy: 1
+                maxValue: 9223372036854775807
+                minValue: 1
+                sequenceName: batch_job_execution_seq
+                startValue: 1
+- changeSet:
+      id: 1625491424218-14
+      author: state303
+      changes:
+          - createSequence:
+                cacheSize: 1
+                cycle: false
+                dataType: bigint
+                incrementBy: 1
+                maxValue: 9223372036854775807
+                minValue: 1
+                sequenceName: batch_job_seq
+                startValue: 1
+- changeSet:
+      id: 1625491424218-15
+      author: state303
+      changes:
+          - createSequence:
+                cacheSize: 1
+                cycle: false
+                dataType: bigint
+                incrementBy: 1
+                maxValue: 9223372036854775807
+                minValue: 1
+                sequenceName: batch_step_execution_seq
+                startValue: 1
