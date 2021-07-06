@@ -12,7 +12,7 @@ plugins {
 bootJar.enabled(false)
 jar.enabled(true)
 
-group 'io.dsub.discogs'
+group 'io.dsub.jooq'
 version '0.0.2.16'
 
 sourceCompatibility = JavaVersion.VERSION_16
@@ -31,8 +31,6 @@ dependencies {
             'mysql:mysql-connector-java'
     )
     implementation(
-            'org.springframework.boot:spring-boot-starter-data-jpa',
-            'org.springframework.boot:spring-boot-starter-aop',
             'org.jooq:jooq',
             'org.projectlombok:lombok'
     )
@@ -62,7 +60,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/state303/discogs-common")
+            url = uri("https://maven.pkg.github.com/state303/discogs-jooq")
             credentials {
                 username = getPropVal("USERNAME");
                 password = getPropVal("PKG_TOKEN");
@@ -71,7 +69,7 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            artifactId = 'discogs-common'
+            artifactId = 'discogs-jooq'
             from components.java
             versionMapping {
                 usage('java-api') {
@@ -84,6 +82,7 @@ publishing {
         }
     }
 }
+
 // jooq
 jooq {
     configurations {
@@ -107,7 +106,7 @@ jooq {
                         javaTimeTypes = true
                     }
                     target {
-                        packageName = 'io.dsub.discogs.common.jooq'
+                        packageName = 'io.dsub.discogs.jooq'
                         directory = "build/generated/main"  // default (can be omitted)
                     }
                     strategy.name = 'org.jooq.codegen.DefaultGeneratorStrategy'
