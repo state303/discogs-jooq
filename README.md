@@ -1,5 +1,5 @@
 # discogs-jooq
-[![Build Status](https://travis-ci.com/state303/discogs-common.svg?token=9xWFzpWYawyj1N74zXpn&branch=main)](https://travis-ci.com/state303/discogs-common)
+[![Build Status](https://app.travis-ci.com/state303/discogs-jooq.svg?branch=main)](https://app.travis-ci.com/state303/discogs-jooq)
 
 JOOQ generated classes to be used across products.
 
