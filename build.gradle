@@ -13,7 +13,7 @@ bootJar.enabled(false)
 jar.enabled(true)
 
 group 'io.dsub.jooq'
-version '0.0.2.16'
+version '0.0.3'
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
@@ -28,11 +28,9 @@ dependencies {
             'org.slf4j:slf4j-simple:1.7.9',
             'org.postgresql:postgresql',
             'org.testcontainers:postgresql:1.15.3',
-            'mysql:mysql-connector-java'
     )
     implementation(
             'org.jooq:jooq',
-            'org.projectlombok:lombok'
     )
     liquibaseRuntime (
             'org.liquibase:liquibase-core:3.8.1',
@@ -40,9 +38,6 @@ dependencies {
             'javax.xml.bind:jaxb-api:2.3.1',
             'org.postgresql:postgresql',
             'org.yaml:snakeyaml:1.15'
-    )
-    annotationProcessor(
-            'org.projectlombok:lombok'
     )
 }
 
